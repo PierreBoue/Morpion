@@ -9,24 +9,30 @@ public class TicTacToe
     {
         for (int i = 0; i < size; i++ )
         {
-           // plateau[i]= new Cell[size];
+           plateau[i]= new Cell[size];
             for (int j=0; j< size; j++)
             {
-//                plateau[i][j]= new Cell();
+               plateau[i][j]= new Cell( i, j );
             }
         }
-//        players = { new Player( 'X' ) };
+        Player p = new Player( 'X' );
+       players = new Player[]{p, new Player('O')};
     }
     public void playgame()
     {
         display();
         int nbrecoup = 0;
-        for ( Player player: players)
+        final int maxcoup = (int)Math.pow(size,2) ;
+        while ( nbrecoup < maxcoup)
         {
-            getMoveFromPlayer( player );
-            nbrecoup++;
+            for (Player player : players)
+            {
+                System.out.println("Player " + player.symbol);
+                getMoveFromPlayer(player);
+                nbrecoup++;
+                if ( nbrecoup >= maxcoup ) break;
+            }
         }
-
     }
     public void getMoveFromPlayer( Player player )
     {
@@ -40,11 +46,11 @@ public class TicTacToe
                 System.err.println("Column number should be between 0 and " + ( size - 1));
             } else if (( coordonnees[1] < 0 ) || ( coordonnees[1] >= size )) {
                 System.err.println("Line number should be between 0 and " + ( size - 1));
-            } else if ( plateau[coordonnees[0]][ coordonnees[1]] != null ) {
+            } else if ( plateau[coordonnees[1]][ coordonnees[0]].owner != null ) {
                 System.err.println( "The cell " + coordonnees[0] + " - " + coordonnees[1] + " is already taken, choose another");
             } else {
                 ok = true;
-                plateau[coordonnees[0]][coordonnees[1]].owner = player;
+                plateau[coordonnees[1]][coordonnees[0]].owner = player;
                 display();
             }
         }
