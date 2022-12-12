@@ -70,4 +70,41 @@ public class TicTacToe
             System.out.println( "|\n" + separateur);
         }
     }
+    private boolean isOver()
+    {
+        boolean isover = false;
+        int nbrevide=0;
+        for ( int ligne=0; ligne < size; ligne++ ) //verification lignes
+        {
+            int nbrealign=0;
+            char coup  = '?';
+            for ( int col=0; col < size; col++)
+            {
+               Cell cel = plateau[ligne][col];
+               if ( cel.owner == null )
+               {
+                  nbrevide++;
+                   continue;
+               }
+               if ( col == 0 )
+                {
+                    coup = cel.owner.symbol;
+                } else {
+                    if ( coup == cel.owner.symbol )
+                    {
+                        nbrealign++;
+                        if ( nbrealign >= size )
+                        {
+                            System.out.println("Le joueur " +  coup + " a gagné!!");
+                        }
+                    } else {
+                        isover = false;
+                    }
+                    coup = cel.owner.symbol;
+                }
+
+            }
+        }
+        return isover;
+    }
 }
