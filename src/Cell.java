@@ -1,5 +1,5 @@
 public class Cell {
-    //boolean isOccupied = false;
+
     int column = -1;
     int row = -1;
     Player owner;
@@ -11,7 +11,6 @@ public class Cell {
     }
     public String getRepresentation()
     {
-
         char symb = ( owner == null )? ' ':owner.symbol;
         return"| " + symb + " ";
     }

@@ -2,13 +2,15 @@ import java.lang.System;
 
 public class TicTacToe
 {
-    final int size = 4;
+    final int size = 3;
     Cell[][] plateau= new Cell[size][size];
     Player[] players;
     public TicTacToe()
     {
-        for (int i = 0; i < size; i++ ) {
-            for (int j=0; j< size; j++) {
+        for (int i = 0; i < size; i++ )
+        {
+            for (int j=0; j< size; j++)
+            {
                plateau[i][j]= new Cell( i, j );
             }
         }
@@ -54,7 +56,7 @@ public class TicTacToe
     public void display()
     {
         String separateur = "";
-        for (int i = 0; i < (size * 4 + 4); i++ ) separateur += '_';// 4 taille d'une cellule
+        for (int i = 0; i < (size * 4 + 4); i++ ) separateur += ( i < 3 )?' ':'_';// 4 taille d'une cellule
         System.out.println(separateur);
         System.out.print("   |");
         for (int i=0; i < size; i++) System.out.print(" " + i + " |");
@@ -104,7 +106,6 @@ public class TicTacToe
                     }
                     coup = cel.owner.symbol;
                 }
-
             }
         }
         if ( nbrevide == 0 )
@@ -143,9 +144,7 @@ public class TicTacToe
                     }
                 }
                 coup = cel.owner.symbol;
-
             }
-
         }
         int nbrealign =0;
         char coup = '?';
