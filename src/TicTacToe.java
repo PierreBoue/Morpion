@@ -21,16 +21,13 @@ public class TicTacToe
     public void playgame()
     {
         display();
-        int nbrecoup = 0;
-        final int maxcoup = (int)Math.pow(size,2) ;
-        while ( nbrecoup < maxcoup)
+        while ( ! isOver())
         {
             for (Player player : players)
             {
                 System.out.println("Player " + player.symbol);
                 getMoveFromPlayer(player);
-                nbrecoup++;
-                if ( nbrecoup >= maxcoup ) break;
+                if ( isOver() ) return;
             }
         }
     }
@@ -72,7 +69,7 @@ public class TicTacToe
     }
     private boolean isOver()
     {
-        boolean isover = false;
+        //boolean isover = false;
         int nbrevide=0;
         for ( int ligne=0; ligne < size; ligne++ ) //verification lignes
         {
@@ -89,22 +86,115 @@ public class TicTacToe
                if ( col == 0 )
                 {
                     coup = cel.owner.symbol;
+                    nbrealign++;
                 } else {
                     if ( coup == cel.owner.symbol )
                     {
                         nbrealign++;
                         if ( nbrealign >= size )
                         {
-                            System.out.println("Le joueur " +  coup + " a gagné!!");
+                            System.out.println("Player " +  coup + " won ( horizontal )!!");
+                            return true;
                         }
                     } else {
-                        isover = false;
+                        nbrealign =0;
+                       // isover = false;
                     }
                     coup = cel.owner.symbol;
                 }
 
             }
         }
-        return isover;
+        if ( nbrevide == 0 )
+        {
+            System.out.println("Nobody wins!!!");
+            return true;
+        }
+        for ( int col=0; col < size; col++) // vérification colonnes
+        {
+            int nbrealign=0;
+            char coup  = '?';
+            for ( int ligne=0; ligne < size; ligne++ )
+            {
+                Cell cel = plateau[ligne][col];
+                if ( cel.owner == null )
+                {
+                    nbrevide++;
+                    continue;
+                }
+                if ( ligne == 0 )
+                {
+                    //coup = cel.owner.symbol;
+                    nbrealign++;
+                } else {
+                    if ( coup == cel.owner.symbol )
+                    {
+                        nbrealign++;
+                        if ( nbrealign >= size )
+                        {
+                            System.out.println("Player " +  coup + " won ( vertical )!!");
+                            return true;
+                        }
+                    } else {
+                        nbrealign =0;
+                        //isover = false;
+                    }
+                }
+                coup = cel.owner.symbol;
+
+            }
+
+        }
+        int nbrealign =0;
+        char coup = '?';
+        for (int i=0; i < size; i++ ) // diagonale partant en haut à gauche
+        {
+            Cell cel = plateau[i][i];
+            if ( cel.owner != null)
+            {
+                if (i == 0) {
+                    nbrealign++;
+                } else {
+                    if (coup == cel.owner.symbol) {
+                        nbrealign++;
+                        if (nbrealign >= size) {
+                            System.out.println("Player " + coup + " won ( diagonal TL )!!");
+                            return true;
+                        }
+                    } else {
+                        nbrealign = 0;
+                        break;
+                    }
+
+                }
+                coup = cel.owner.symbol;
+            } else coup = '?';
+        }
+        nbrealign =0;
+        coup = '?';
+        for (int i=size - 1; i >= 0; i-- ) // diagonale partant en haut à gauche
+        {
+            Cell cel = plateau[i][i];
+            if ( cel.owner != null)
+            {
+                if (i == 0) {
+                    nbrealign++;
+                } else {
+                    if (coup == cel.owner.symbol) {
+                        nbrealign++;
+                        if (nbrealign >= size) {
+                            System.out.println("Player " + coup + " won ( diagonal TR ) !!");
+                            return true;
+                        }
+                    } else {
+                        nbrealign = 0;
+                        break;
+                    }
+
+                }
+                coup = cel.owner.symbol;
+            } else coup ='?';
+        }
+        return false;
     }
 }
