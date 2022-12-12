@@ -2,35 +2,34 @@ import java.lang.System;
 
 public class TicTacToe
 {
-    final int size = 3;
+    final int size = 4;
     Cell[][] plateau= new Cell[size][size];
     Player[] players;
     public TicTacToe()
     {
-        for (int i = 0; i < size; i++ )
-        {
-           plateau[i]= new Cell[size];
-            for (int j=0; j< size; j++)
-            {
+        for (int i = 0; i < size; i++ ) {
+            for (int j=0; j< size; j++) {
                plateau[i][j]= new Cell( i, j );
             }
         }
         Player p = new Player( 'X' );
        players = new Player[]{p, new Player('O')};
     }
-    public void playgame()
-    {
+
+    public void playgame() {
         display();
-        while ( ! isOver())
-        {
-            for (Player player : players)
-            {
-                System.out.println("Player " + player.symbol);
-                getMoveFromPlayer(player);
-                if ( isOver() ) return;
+        Player activePlayer = players[0];
+        while ( ! isOver()) {
+            System.out.println("Player " + activePlayer.symbol);
+            getMoveFromPlayer(activePlayer);
+            if (activePlayer == players[0]) {
+                activePlayer = players[1];
+            } else {
+                activePlayer = players[0];
             }
         }
     }
+
     public void getMoveFromPlayer( Player player )
     {
         boolean ok = false;
@@ -52,14 +51,17 @@ public class TicTacToe
             }
         }
     }
-    public void  display()
+    public void display()
     {
         String separateur = "";
-        for (int i = 0; i < (size * 4 + 1); i++ ) separateur += '_';// 4 taille d'une cellule
+        for (int i = 0; i < (size * 4 + 4); i++ ) separateur += '_';// 4 taille d'une cellule
         System.out.println(separateur);
+        System.out.print("   |");
+        for (int i=0; i < size; i++) System.out.print(" " + i + " |");
+        System.out.println("\n" + separateur);
         for (int i=0; i < size; i++)
         {
-
+            System.out.print(" " + i + " ");
             for ( Cell cellule : plateau[i])
             {
                 System.out.print(cellule.getRepresentation());
@@ -71,7 +73,7 @@ public class TicTacToe
     {
         //boolean isover = false;
         int nbrevide=0;
-        for ( int ligne=0; ligne < size; ligne++ ) //verification lignes
+        for ( int ligne=0; ligne < size; ligne++ ) //verification alignement lignes
         {
             int nbrealign=0;
             char coup  = '?';
@@ -110,7 +112,7 @@ public class TicTacToe
             System.out.println("Nobody wins!!!");
             return true;
         }
-        for ( int col=0; col < size; col++) // vérification colonnes
+        for ( int col=0; col < size; col++) // vérification alignement colonnes
         {
             int nbrealign=0;
             char coup  = '?';
@@ -172,9 +174,9 @@ public class TicTacToe
         }
         nbrealign =0;
         coup = '?';
-        for (int i=size - 1; i >= 0; i-- ) // diagonale partant en haut à gauche
+        for (int i=0; i < size; i++ ) // diagonale partant en haut à droite
         {
-            Cell cel = plateau[i][i];
+            Cell cel = plateau[i][size -i -1];
             if ( cel.owner != null)
             {
                 if (i == 0) {
