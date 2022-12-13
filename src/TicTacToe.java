@@ -58,21 +58,22 @@ public class TicTacToe
     }
     public void display()
     {
-        String separateur = "";
-        for (int i = 0; i < (size * 4 + 4); i++ ) separateur += ( i < 3 )?' ':'_';// 4 taille d'une cellule
-        //System.out.println(separateur);
-        System.out.print("   |");
-        for (int i=0; i < size; i++) System.out.print(" " + i + " |");
-        System.out.println("\n" + separateur);
-        for (int i=0; i < size; i++)
-        {
-            System.out.print(" " + i + " ");
-            for ( Cell cellule : plateau[i])
-            {
-                System.out.print(cellule.getRepresentation());
-            }
-            System.out.println( "|\n" + separateur);
-        }
+//        String separateur = "";
+//        for (int i = 0; i < (size * 4 + 4); i++ ) separateur += ( i < 3 )?' ':'_';// 4 taille d'une cellule
+//        //System.out.println(separateur);
+//        System.out.print("   |");
+//        for (int i=0; i < size; i++) System.out.print(" " + i + " |");
+//        System.out.println("\n" + separateur);
+//        for (int i=0; i < size; i++)
+//        {
+//            System.out.print(" " + i + " ");
+//            for ( Cell cellule : plateau[i])
+//            {
+//                System.out.print(cellule.getRepresentation());
+//            }
+//            System.out.println( "|\n" + separateur);
+//        }
+        View.displayBoard(plateau);
     }
     private boolean isOver()
     {
@@ -100,7 +101,8 @@ public class TicTacToe
                         nbrealign++;
                         if ( nbrealign >= size )
                         {
-                            System.out.println("Player " +  coup + " won ( horizontal )!!");
+                           // System.out.println("Player " +  coup + " won ( horizontal )!!");
+                            View.printWinner(cel.owner);
                             return true;
                         }
                     } else {
@@ -133,7 +135,8 @@ public class TicTacToe
                         nbrealign++;
                         if ( nbrealign >= size )
                         {
-                            System.out.println("Player " +  coup + " won ( vertical )!!");
+                            //System.out.println("Player " +  coup + " won ( vertical )!!");
+                            View.printWinner(cel.owner);
                             return true;
                         }
                     } else {
@@ -157,7 +160,8 @@ public class TicTacToe
                     if (coup == cel.owner.symbol) {
                         nbrealign++;
                         if (nbrealign >= size) {
-                            System.out.println("Player " + coup + " won ( diagonal TL )!!");
+                            //System.out.println("Player " + coup + " won ( diagonal TL )!!");
+                            View.printWinner(cel.owner);
                             return true;
                         }
                     } else {
@@ -182,7 +186,8 @@ public class TicTacToe
                     if (coup == cel.owner.symbol) {
                         nbrealign++;
                         if (nbrealign >= size) {
-                            System.out.println("Player " + coup + " won ( diagonal TR ) !!");
+                            //System.out.println("Player " + coup + " won ( diagonal TR ) !!");
+                            View.printWinner(cel.owner);
                             return true;
                         }
                     } else {
@@ -196,7 +201,8 @@ public class TicTacToe
         }
         if ( nbrevide == 0 )
         {
-            System.out.println("Nobody wins!!!");
+            //System.out.println("Nobody wins!!!");
+            View.printWinner(null);
             return true;
         }
         return false;

@@ -17,7 +17,8 @@ public class Player
             try {
                 coordonees[0] = scan.nextInt();
             } catch (Exception e) {
-                System.err.println("You didn't type an integer" );
+                //System.err.println( );
+                View.printError("You didn't type an integer");
                 scan.nextLine();
             }
         }
@@ -28,7 +29,8 @@ public class Player
                 coordonees[1] = scan.nextInt();
             } catch (Exception e)
             {
-                System.err.println("You didn't type an integer" );
+               // System.err.println("You didn't type an integer" );
+                View.printError("You didn't type an integer");
                 scan.nextLine();
             }
         }
