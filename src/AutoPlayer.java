@@ -30,8 +30,11 @@ public class AutoPlayer extends Player {
         if ( playableCells.size() == 0 ) playableCells = emptyCells;
         //int idx = (int)Math.floor ( Math.random() * playableCells.size());
         playableCells.sort( Cell::compareCell);
-        printFavorable();
-        playableCells.toString();
+       // printFavorable();
+//        for (Cell cell:) {
+//
+//        }
+       // System.out.println(playableCells.toString()); ;
         if (playableCells.size() == 0) System.out.println("no playableCells");
         //Arrays.toString( );
         //System.out.println("Auto player row = " + playableCells.get(0).row + " column = " + playableCells.get(0).column);

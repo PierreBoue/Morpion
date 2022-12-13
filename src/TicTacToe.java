@@ -16,7 +16,7 @@ public class TicTacToe
                plateau[i][j]= new Cell( j, i );
             }
         }
-       players = new Player[]{ new Player( 'X' ), new AutoPlayer('O')};
+       players = new Player[]{ new AutoPlayer( 'X' ), new Player('O')};
     }
 
     public void playgame() {
@@ -111,11 +111,6 @@ public class TicTacToe
                 }
             }
         }
-        if ( nbrevide == 0 )
-        {
-            System.out.println("Nobody wins!!!");
-            return true;
-        }
         for ( int col=0; col < size; col++) // vérification alignement colonnes
         {
             int nbrealign=0;
@@ -198,6 +193,11 @@ public class TicTacToe
                 }
                 coup = cel.owner.symbol;
             } else coup ='?';
+        }
+        if ( nbrevide == 0 )
+        {
+            System.out.println("Nobody wins!!!");
+            return true;
         }
         return false;
     }

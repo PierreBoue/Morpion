@@ -41,7 +41,7 @@ public class Cell {
                        // countFreeCellsInline++;
                     }
                 }
-                System.out.println("vertical " + countFreeCellsInline );
+               // System.out.println("vertical " + countFreeCellsInline );
                 if ( countFreeCellsInline == plateau[0].length) inlineCells.add(cell);
             }
             if ( cell.row == this.row )
@@ -56,9 +56,11 @@ public class Cell {
                         cell.favorable++;
                     }
                 }
-                System.out.println("horizontal " + countFreeCellsInline);
+                //System.out.println("horizontal " + countFreeCellsInline);
                 if ( countFreeCellsInline  == plateau[0].length) inlineCells.add(cell);
             }
+            cell.favorable *= 10;
+            cell.favorable += (int)Math.floor ( Math.random() *9);
             if (cell.column - this.column == cell.row - this.row)
             {
                 inlineCells.add(cell);
@@ -73,7 +75,8 @@ public class Cell {
     }
     int compareCell( Cell cell )
     {
-        return this.favorable - cell.favorable ;
+        int sens =cell.favorable - this.favorable;
+        return sens;
     }
     public String toString()
     {
