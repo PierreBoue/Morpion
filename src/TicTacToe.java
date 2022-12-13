@@ -1,4 +1,6 @@
 import java.lang.System;
+import java.util.Arrays;
+import java.util.stream.Stream;
 
 public class TicTacToe
 {
@@ -11,11 +13,10 @@ public class TicTacToe
         {
             for (int j=0; j< size; j++)
             {
-               plateau[i][j]= new Cell( i, j );
+               plateau[i][j]= new Cell( j, i );
             }
         }
-        Player p = new Player( 'X' );
-       players = new Player[]{p, new Player('O')};
+       players = new Player[]{ new Player( 'X' ), new AutoPlayer('O')};
     }
 
     public void playgame() {
@@ -23,7 +24,7 @@ public class TicTacToe
         Player activePlayer = players[0];
         while ( ! isOver()) {
             System.out.println("Player " + activePlayer.symbol);
-            getMoveFromPlayer(activePlayer);
+            setPlayerNewMove(activePlayer);
             if (activePlayer == players[0]) {
                 activePlayer = players[1];
             } else {
@@ -32,10 +33,11 @@ public class TicTacToe
         }
     }
 
-    public void getMoveFromPlayer( Player player )
+    public void setPlayerNewMove( Player player )
     {
         boolean ok = false;
         int[] coordonnees = {-1,-1};
+        int i=0;
         while (! ok )
         {
             coordonnees = player.play( size );
@@ -46,6 +48,7 @@ public class TicTacToe
                 System.err.println("Line number should be between 0 and " + ( size - 1));
             } else if ( plateau[coordonnees[1]][ coordonnees[0]].owner != null ) {
                 System.err.println( "The cell " + coordonnees[0] + " - " + coordonnees[1] + " is already taken, choose another");
+                if ( i++ > 10 ) break;
             } else {
                 ok = true;
                 plateau[coordonnees[1]][coordonnees[0]].owner = player;
@@ -57,7 +60,7 @@ public class TicTacToe
     {
         String separateur = "";
         for (int i = 0; i < (size * 4 + 4); i++ ) separateur += ( i < 3 )?' ':'_';// 4 taille d'une cellule
-        System.out.println(separateur);
+        //System.out.println(separateur);
         System.out.print("   |");
         for (int i=0; i < size; i++) System.out.print(" " + i + " |");
         System.out.println("\n" + separateur);
@@ -169,7 +172,7 @@ public class TicTacToe
 
                 }
                 coup = cel.owner.symbol;
-            } else coup = '?';
+            } //else coup = '?';
         }
         nbrealign =0;
         coup = '?';
@@ -197,5 +200,16 @@ public class TicTacToe
             } else coup ='?';
         }
         return false;
+    }
+    public void resetFavorable()
+    {
+        for (int i = 0; i < size; i++ )
+        {
+            for (int j=0; j< size; j++)
+            {
+                plateau[i][j].favorable=0;
+            }
+        }
+
     }
 }
