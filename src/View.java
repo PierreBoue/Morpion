@@ -1,6 +1,6 @@
 public class View
 {
-    public static void displayBoard( Cell[][] board )
+    public void displayBoard( Cell[][] board )
     {
         String separateur = "";
         int size = board[0].length;
@@ -20,11 +20,11 @@ public class View
         }
 
     }
-    public static void printPlayer( Player player )
+    public void printPlayer( Player player )
     {
         System.out.println("Player "+ player.symbol);
     }
-    public static void printWinner( Player player )
+    public void printWinner( Player player )
     {
         if ( player == null)
         {
@@ -33,7 +33,11 @@ public class View
         }
         System.out.println("Player "+ player.symbol + " won!!!");
     }
-    public static void printError( String message )
+    public void printMessage( String message )
+    {
+        System.out.println( message );
+    }
+    public void printError( String message )
     {
         System.err.println(message);
     }

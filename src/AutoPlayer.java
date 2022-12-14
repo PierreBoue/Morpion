@@ -28,15 +28,9 @@ public class AutoPlayer extends Player {
             playableCells.addAll( cell.findCellsInline(emptyCells));
         }
         if ( playableCells.size() == 0 ) playableCells = emptyCells;
-        //int idx = (int)Math.floor ( Math.random() * playableCells.size());
-        playableCells.sort( Cell::compareCell);
-       // printFavorable();
-//        for (Cell cell:) {
-//
-//        }
-       // System.out.println(playableCells.toString()); ;
+        if ( playableCells.size() == 0 ) return coordonnees;
+         playableCells.sort( Cell::compareCell);
         if (playableCells.size() == 0) System.out.println("no playableCells");
-        //Arrays.toString( );
         //System.out.println("Auto player row = " + playableCells.get(0).row + " column = " + playableCells.get(0).column);
         return playableCells.get(0).getCoordonnes();
     }

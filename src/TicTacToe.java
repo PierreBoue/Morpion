@@ -36,6 +36,7 @@ public class TicTacToe
     public void setPlayerNewMove( Player player )
     {
         boolean ok = false;
+        View vue = new View();
         int[] coordonnees = {-1,-1};
         int i=0;
         while (! ok )
@@ -43,11 +44,11 @@ public class TicTacToe
             coordonnees = player.play( size );
             if (( coordonnees[0] < 0 ) || ( coordonnees[0] >= size ))
             {
-                System.err.println("Column number should be between 0 and " + ( size - 1));
+                vue.printError("Column number should be between 0 and " + ( size - 1));
             } else if (( coordonnees[1] < 0 ) || ( coordonnees[1] >= size )) {
-                System.err.println("Line number should be between 0 and " + ( size - 1));
+                vue.printError("Line number should be between 0 and " + ( size - 1));
             } else if ( plateau[coordonnees[1]][ coordonnees[0]].owner != null ) {
-                System.err.println( "The cell " + coordonnees[0] + " - " + coordonnees[1] + " is already taken, choose another");
+                vue.printError("The cell " + coordonnees[0] + " - " + coordonnees[1] + " is already taken, choose another");
                 if ( i++ > 10 ) break;
             } else {
                 ok = true;
@@ -58,26 +59,12 @@ public class TicTacToe
     }
     public void display()
     {
-//        String separateur = "";
-//        for (int i = 0; i < (size * 4 + 4); i++ ) separateur += ( i < 3 )?' ':'_';// 4 taille d'une cellule
-//        //System.out.println(separateur);
-//        System.out.print("   |");
-//        for (int i=0; i < size; i++) System.out.print(" " + i + " |");
-//        System.out.println("\n" + separateur);
-//        for (int i=0; i < size; i++)
-//        {
-//            System.out.print(" " + i + " ");
-//            for ( Cell cellule : plateau[i])
-//            {
-//                System.out.print(cellule.getRepresentation());
-//            }
-//            System.out.println( "|\n" + separateur);
-//        }
-        View.displayBoard(plateau);
+        View vue = new View();
+        vue.displayBoard(plateau);
     }
     private boolean isOver()
     {
-        //boolean isover = false;
+        View vue = new View();
         int nbrevide=0;
         for ( int ligne=0; ligne < size; ligne++ ) //verification alignement lignes
         {
@@ -102,7 +89,7 @@ public class TicTacToe
                         if ( nbrealign >= size )
                         {
                            // System.out.println("Player " +  coup + " won ( horizontal )!!");
-                            View.printWinner(cel.owner);
+                            vue.printWinner(cel.owner);
                             return true;
                         }
                     } else {
@@ -136,7 +123,7 @@ public class TicTacToe
                         if ( nbrealign >= size )
                         {
                             //System.out.println("Player " +  coup + " won ( vertical )!!");
-                            View.printWinner(cel.owner);
+                            vue.printWinner(cel.owner);
                             return true;
                         }
                     } else {
@@ -160,8 +147,7 @@ public class TicTacToe
                     if (coup == cel.owner.symbol) {
                         nbrealign++;
                         if (nbrealign >= size) {
-                            //System.out.println("Player " + coup + " won ( diagonal TL )!!");
-                            View.printWinner(cel.owner);
+                            vue.printWinner(cel.owner);
                             return true;
                         }
                     } else {
@@ -187,7 +173,7 @@ public class TicTacToe
                         nbrealign++;
                         if (nbrealign >= size) {
                             //System.out.println("Player " + coup + " won ( diagonal TR ) !!");
-                            View.printWinner(cel.owner);
+                            vue.printWinner(cel.owner);
                             return true;
                         }
                     } else {
@@ -202,7 +188,7 @@ public class TicTacToe
         if ( nbrevide == 0 )
         {
             //System.out.println("Nobody wins!!!");
-            View.printWinner(null);
+            vue.printWinner(null);
             return true;
         }
         return false;
