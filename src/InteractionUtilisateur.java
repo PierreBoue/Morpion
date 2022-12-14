@@ -12,7 +12,6 @@ public class InteractionUtilisateur
         View vue = new View();
         int reponse = -1;
         vue.printMessage(message);
-       // System.out.println(message);
         while ( reponse < 0)
         {
             try {

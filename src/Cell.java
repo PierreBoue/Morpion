@@ -21,6 +21,7 @@ public class Cell {
     {
         ArrayList<Cell> inlineCells = new ArrayList<Cell>();
         Cell[][] plateau = Main.morpion.plateau;
+        int size = plateau[0].length;
         Main.morpion.resetFavorable();
         for (Cell cell:emptyCells)
         {
@@ -32,7 +33,7 @@ public class Cell {
             if ( cell.column == this.column )
             {
                 int countFreeCellsInline = 1;
-                for (int line =0 ; line < plateau[0].length; line++)
+                for (int line =0 ; line < size; line++)
                 {
                     if ((plateau[line][this.column].owner == cell.owner) || (plateau[line][this.column].owner == null )) countFreeCellsInline++;
                     if (plateau[line][this.column].owner == cell.owner)
@@ -42,12 +43,13 @@ public class Cell {
                     }
                 }
                // System.out.println("vertical " + countFreeCellsInline );
-                if ( countFreeCellsInline == plateau[0].length) inlineCells.add(cell);
+                if ( countFreeCellsInline >= plateau[0].length) inlineCells.add(cell); else cell.favorable=0;
+                //if ( countFreeCellsInline > 0) inlineCells.add(cell);
             }
             if ( cell.row == this.row )
             {
                 int countFreeCellsInline = 1;
-                for (int col =0 ; col < plateau[0].length; col++)
+                for (int col =0 ; col < size; col++)
                 {
                     if ((plateau[this.row][col].owner == cell.owner) || (plateau[this.row][col].owner == null )) countFreeCellsInline++;
                     if (plateau[this.row][col].owner == cell.owner)
@@ -57,15 +59,45 @@ public class Cell {
                     }
                 }
                 //System.out.println("horizontal " + countFreeCellsInline);
-                if ( countFreeCellsInline  == plateau[0].length) inlineCells.add(cell);
+                if ( countFreeCellsInline  >= size) inlineCells.add(cell); else cell.favorable=0;
+                //if ( countFreeCellsInline  > 0 ) inlineCells.add(cell);
             }
             cell.favorable *= 10;
             cell.favorable += (int)Math.floor ( Math.random() *9);
             if (cell.column - this.column == cell.row - this.row)
             {
-                inlineCells.add(cell);
-            }
-        }
+                int countFreeCellsInline = 1;
+                for ( int i =0; i < size; i++)
+                {
+                    if ((plateau[i][i].owner == cell.owner) || (plateau[i][i].owner == null )) countFreeCellsInline++;
+                    if (plateau[i][i].owner == cell.owner)
+                    {
+                        // countFreeCellsInline++;
+                        cell.favorable++;
+                    }
+
+                }
+                //inlineCells.add(cell);
+                cell.favorable *= 10;
+                cell.favorable += (int)Math.floor ( Math.random() *9);
+                if ( countFreeCellsInline  >= size) inlineCells.add(cell); else cell.favorable=0;
+                countFreeCellsInline = 1;
+                for ( int i =size-1; i >=0; i--)
+                {
+                    if ((plateau[i][i].owner == cell.owner) || (plateau[i][i].owner == null )) countFreeCellsInline++;
+                    if (plateau[i][i].owner == cell.owner)
+                    {
+
+                        cell.favorable++;
+                    }
+
+                }
+                //inlineCells.add(cell);
+                cell.favorable *= 10;
+                cell.favorable += (int)Math.floor ( Math.random() *9);
+                if ( countFreeCellsInline  >= size) inlineCells.add(cell); else cell.favorable=0;
+             }
+         }
         return inlineCells;
     }
     public int[] getCoordonnes()

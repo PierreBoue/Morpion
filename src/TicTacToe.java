@@ -16,7 +16,7 @@ public class TicTacToe
                plateau[i][j]= new Cell( j, i );
             }
         }
-       players = new Player[]{ new AutoPlayer( 'X' ), new Player('O')};
+       players = new Player[]{ new Player( 'X' ), new AutoPlayer('O')};
     }
 
     public void playgame() {
