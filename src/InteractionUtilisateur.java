@@ -27,6 +27,25 @@ public class InteractionUtilisateur
         }
         return reponse;
     }
+    public String askForString( String message )
+    {
+        View vue = new View();
+        String reponse = null;
+        vue.printMessage(message);
+
+        while ( reponse == null)
+        {
+            try {
+                reponse = scanner.nextLine();
+
+            } catch (Exception e) {
+                vue.printError("You didn't type a string");
+                scanner.nextLine();
+            }
+
+        }
+        return reponse;
+    }
     public Player askForPlayer( int playerindex )
     {
         View vue = new View();

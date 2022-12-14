@@ -2,11 +2,23 @@ import java.util.Scanner;
 
 public class Main
 {
-    public static TicTacToe morpion =null;
+    public static TicTacToe morpion;
     public static void main(String[] args)
     {
-        morpion = new TicTacToe();
-        morpion.playgame();
+       InteractionUtilisateur interaction = new InteractionUtilisateur();
+       boolean stop = false;
+       while ( ! stop )
+       {
+           morpion = new TicTacToe();
+           morpion.playgame();
+           String reponse ="";
+           while ( reponse.isBlank())
+           {
+              reponse = interaction.askForString("Would you like to play a new game? (Y/N)");
+           }
+           reponse = reponse.toUpperCase();
+           stop = reponse.charAt(0) != 'Y';
+       }
     }
 
 }
