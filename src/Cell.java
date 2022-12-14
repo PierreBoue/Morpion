@@ -38,8 +38,8 @@ public class Cell {
                     }
                 }
                // System.out.println("vertical " + countFreeCellsInline );
-                if ( countFreeCellsInline >= plateau[0].length) inlineCells.add(cell); else cell.favorable=0;
-                //if ( countFreeCellsInline > 0) inlineCells.add(cell);
+                if ( countFreeCellsInline >= size) inlineCells.add(cell); else cell.favorable=0;
+
             }
             if ( cell.row == this.row )
             {
@@ -73,8 +73,8 @@ public class Cell {
 
                 }
                 //inlineCells.add(cell);
-                cell.favorable *= 10;
-                cell.favorable += (int)Math.floor ( Math.random() *9);
+                //cell.favorable *= 10;
+               // cell.favorable += (int)Math.floor ( Math.random() *9);
                 if ( countFreeCellsInline  >= size) inlineCells.add(cell); else cell.favorable=0;
                 countFreeCellsInline = 1;
                 for ( int i =size-1; i >=0; i--)

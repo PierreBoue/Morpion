@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class Player
 {
     public char symbol;
-    //private  InteractionUtilisateur interaction =null;
     public Player( char symb )
     {
         symbol = symb;

@@ -22,7 +22,6 @@ public class TicTacToe
         {
             players[i]= interaction.askForPlayer( i + 1 );
         }
-      // players = new Player[]{ new Player( 'X' ), new AutoPlayer('O')};
     }
 
     public void playgame() {
@@ -100,7 +99,6 @@ public class TicTacToe
                         }
                     } else {
                         nbrealign =0;
-                       // isover = false;
                     }
                     coup = cel.owner.symbol;
                 }
@@ -134,7 +132,6 @@ public class TicTacToe
                         }
                     } else {
                         nbrealign =0;
-                        //isover = false;
                     }
                 }
                 coup = cel.owner.symbol;
@@ -163,7 +160,7 @@ public class TicTacToe
 
                 }
                 coup = cel.owner.symbol;
-            } //else coup = '?';
+            }
         }
         nbrealign =0;
         coup = '?';
@@ -193,7 +190,6 @@ public class TicTacToe
         }
         if ( nbrevide == 0 )
         {
-            //System.out.println("Nobody wins!!!");
             vue.printWinner(null);
             return true;
         }
