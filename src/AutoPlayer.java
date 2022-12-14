@@ -10,7 +10,7 @@ public class AutoPlayer extends Player {
     {
         int[] coordonnees = {-1,-1};
         Cell[][] plateau = Main.morpion.plateau;
-
+       // System.out.println("Auto Player play....");
         ArrayList<Cell> emptyCells= new ArrayList<Cell>();
         ArrayList<Cell> thisCells= new ArrayList<Cell>();
         for (int ligne=0; ligne < size; ligne++)

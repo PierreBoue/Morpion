@@ -5,7 +5,6 @@ public class View
         String separateur = "";
         int size = board[0].length;
         for (int i = 0; i < (size * 4 + 4); i++ ) separateur += ( i < 3 )?' ':'_';// 4 taille d'une cellule
-        //System.out.println(separateur);
         System.out.print("   |");
         for (int i=0; i < size; i++) System.out.print(" " + i + " |");
         System.out.println("\n" + separateur);

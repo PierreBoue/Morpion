@@ -3,9 +3,11 @@ import java.util.Scanner;
 public class InteractionUtilisateur
 {
     Scanner scanner = null;
+    char nextPlayerSymbol;
     public InteractionUtilisateur()
     {
         scanner = new Scanner(System.in);
+        nextPlayerSymbol = '\0';
     }
     public int askForInt( String message)
     {
@@ -25,4 +27,37 @@ public class InteractionUtilisateur
         }
         return reponse;
     }
+    public Player askForPlayer( int playerindex )
+    {
+        View vue = new View();
+        Player retour=null;
+        //vue.printMessage("");
+        int choice = -1;
+        char symbol;
+        if ( nextPlayerSymbol == '\0')
+        {
+            while (choice < 0) {
+                choice = askForInt("What symbol do you wish to use for player " + playerindex + "\n1 - X\n2 - O");
+                if ((choice < 1) || (choice > 2)) {
+                    vue.printError("invalid choice ( valid choice: 1 or 2 )");
+                    choice = -1;
+                }
+            }
+            symbol = (choice == 1) ? 'X' : 'O';
+            nextPlayerSymbol = (choice == 1) ? 'O' : 'X';
+        } else symbol = nextPlayerSymbol;
+        choice = -1;
+        while (choice < 0)
+        {
+            choice = askForInt("What kind of player is player " + playerindex + "\n1 - Human\n2 - Computer");
+            if (( choice < 1) || ( choice > 2 ))
+            {
+                vue.printError("invalid choice ( valid choice: 1 or 2 )");
+                choice = -1;
+            }
+        }
+        retour = ( choice == 1 )?new Player(symbol):new AutoPlayer(symbol);
+        return retour;
+    }
+
 }

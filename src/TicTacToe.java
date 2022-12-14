@@ -9,6 +9,7 @@ public class TicTacToe
     Player[] players;
     public TicTacToe()
     {
+       InteractionUtilisateur interaction = new InteractionUtilisateur();
         for (int i = 0; i < size; i++ )
         {
             for (int j=0; j< size; j++)
@@ -16,7 +17,12 @@ public class TicTacToe
                plateau[i][j]= new Cell( j, i );
             }
         }
-       players = new Player[]{ new Player( 'X' ), new AutoPlayer('O')};
+        players = new Player[2];
+        for (int i=0; i<2; i++)
+        {
+            players[i]= interaction.askForPlayer( i + 1 );
+        }
+      // players = new Player[]{ new Player( 'X' ), new AutoPlayer('O')};
     }
 
     public void playgame() {

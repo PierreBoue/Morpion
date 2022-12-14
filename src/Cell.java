@@ -25,11 +25,6 @@ public class Cell {
         Main.morpion.resetFavorable();
         for (Cell cell:emptyCells)
         {
-//            if (( cell.column == this.column ) || (cell.row == this.row) || (cell.column - this.column == cell.row - this.row))
-//            {
-//
-//                inlineCells.add(cell);
-//            }
             if ( cell.column == this.column )
             {
                 int countFreeCellsInline = 1;
@@ -62,8 +57,8 @@ public class Cell {
                 if ( countFreeCellsInline  >= size) inlineCells.add(cell); else cell.favorable=0;
                 //if ( countFreeCellsInline  > 0 ) inlineCells.add(cell);
             }
-            cell.favorable *= 10;
-            cell.favorable += (int)Math.floor ( Math.random() *9);
+            //cell.favorable *= 10;
+           // cell.favorable += (int)Math.floor ( Math.random() *9);
             if (cell.column - this.column == cell.row - this.row)
             {
                 int countFreeCellsInline = 1;
