@@ -23,75 +23,95 @@ public class Cell {
         Cell[][] plateau = Main.morpion.plateau;
         int size = plateau[0].length;
         Main.morpion.resetFavorable();
+        int countPlayerAvailableCellsInline = 0;
+        int countOtherPlayerCellsInLine = 0;
         for (Cell cell:emptyCells)
         {
             if ( cell.column == this.column )
             {
-                int countFreeCellsInline = 1;
+                countPlayerAvailableCellsInline = 1;
+                countOtherPlayerCellsInLine = 1;
                 for (int line =0 ; line < size; line++)
                 {
-                    if ((plateau[line][this.column].owner == cell.owner) || (plateau[line][this.column].owner == null )) countFreeCellsInline++;
+                    if ((plateau[line][this.column].owner == cell.owner) || (plateau[line][this.column].owner == null )) countPlayerAvailableCellsInline++;
                     if (plateau[line][this.column].owner == cell.owner)
                     {
                         cell.favorable++;
-                       // countFreeCellsInline++;
-                    }
+                        countOtherPlayerCellsInLine =0;
+                    } else countOtherPlayerCellsInLine++;
+
                 }
-               // System.out.println("vertical " + countFreeCellsInline );
-                if ( countFreeCellsInline >= size) inlineCells.add(cell); else cell.favorable=0;
+                // System.out.println("vertical " + countPlayerAvailableCellsInline );
+                if ( countPlayerAvailableCellsInline >= size) inlineCells.add(cell); else cell.favorable=0;
+                if ( countOtherPlayerCellsInLine >= size )
+                {
+                    cell.favorable += 5;
+                    if ( ! inlineCells.contains(cell)) inlineCells.add(cell);
+                }
 
             }
             if ( cell.row == this.row )
             {
-                int countFreeCellsInline = 1;
+                countPlayerAvailableCellsInline = 1;
+                countOtherPlayerCellsInLine = 1;
                 for (int col =0 ; col < size; col++)
                 {
-                    if ((plateau[this.row][col].owner == cell.owner) || (plateau[this.row][col].owner == null )) countFreeCellsInline++;
+                    if ((plateau[this.row][col].owner == cell.owner) || (plateau[this.row][col].owner == null )) countPlayerAvailableCellsInline++;
                     if (plateau[this.row][col].owner == cell.owner)
                     {
-                       // countFreeCellsInline++;
+                       countOtherPlayerCellsInLine = 0;
                         cell.favorable++;
-                    }
+                    } else  countOtherPlayerCellsInLine++;
                 }
                 //System.out.println("horizontal " + countFreeCellsInline);
-                if ( countFreeCellsInline  >= size) inlineCells.add(cell); else cell.favorable=0;
-                //if ( countFreeCellsInline  > 0 ) inlineCells.add(cell);
+                 if ( countPlayerAvailableCellsInline  >= size) inlineCells.add(cell); else cell.favorable=0;
+                if ( countOtherPlayerCellsInLine >= size )
+                {
+                    cell.favorable += 5;
+                    if ( ! inlineCells.contains(cell)) inlineCells.add(cell);
+                }
+                 //if ( countFreeCellsInline  > 0 ) inlineCells.add(cell);
             }
-            //cell.favorable *= 10;
-           // cell.favorable += (int)Math.floor ( Math.random() *9);
             if (cell.column - this.column == cell.row - this.row)
             {
-                int countFreeCellsInline = 1;
+                countPlayerAvailableCellsInline = 1;
+                countOtherPlayerCellsInLine = 1;
                 for ( int i =0; i < size; i++)
                 {
-                    if ((plateau[i][i].owner == cell.owner) || (plateau[i][i].owner == null )) countFreeCellsInline++;
+                    if ((plateau[i][i].owner == cell.owner) || (plateau[i][i].owner == null )) countPlayerAvailableCellsInline++;
                     if (plateau[i][i].owner == cell.owner)
                     {
-                        // countFreeCellsInline++;
+                        countOtherPlayerCellsInLine = 0;
                         cell.favorable++;
-                    }
+                    }  else countOtherPlayerCellsInLine++;
 
                 }
-                //inlineCells.add(cell);
-                //cell.favorable *= 10;
-               // cell.favorable += (int)Math.floor ( Math.random() *9);
-                if ( countFreeCellsInline  >= size) inlineCells.add(cell); else cell.favorable=0;
-                countFreeCellsInline = 1;
+                if ( countPlayerAvailableCellsInline  >= size) inlineCells.add(cell); else cell.favorable=0;
+                if ( countOtherPlayerCellsInLine >= size )
+                {
+                    cell.favorable += 5;
+                    if ( ! inlineCells.contains(cell)) inlineCells.add(cell);
+                }
+                 countPlayerAvailableCellsInline = 1;
+                countOtherPlayerCellsInLine = 1;
                 for ( int i =size-1; i >=0; i--)
                 {
-                    if ((plateau[i][i].owner == cell.owner) || (plateau[i][i].owner == null )) countFreeCellsInline++;
+                    if ((plateau[i][i].owner == cell.owner) || (plateau[i][i].owner == null )) countPlayerAvailableCellsInline++;
                     if (plateau[i][i].owner == cell.owner)
                     {
-
+                        countOtherPlayerCellsInLine = 0;
                         cell.favorable++;
-                    }
-
+                    } //else countOtherPlayerCellsInLine++;
                 }
-                //inlineCells.add(cell);
-                cell.favorable *= 10;
-                cell.favorable += (int)Math.floor ( Math.random() *9);
-                if ( countFreeCellsInline  >= size) inlineCells.add(cell); else cell.favorable=0;
-             }
+                if ( countPlayerAvailableCellsInline  >= size) inlineCells.add(cell); else cell.favorable=0;
+                if ( countOtherPlayerCellsInLine >= size )
+                {
+                    cell.favorable += 5;
+                    if ( ! inlineCells.contains(cell)) inlineCells.add(cell);
+                }
+            }
+            cell.favorable *= 10;
+            cell.favorable += (int)Math.floor ( Math.random() *9);
          }
         return inlineCells;
     }

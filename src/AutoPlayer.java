@@ -10,6 +10,7 @@ public class AutoPlayer extends Player {
     {
         int[] coordonnees = {-1,-1};
         Cell[][] plateau = Main.morpion.plateau;
+        View vue = new View();
        // System.out.println("Auto Player play....");
         ArrayList<Cell> emptyCells= new ArrayList<Cell>();
         ArrayList<Cell> thisCells= new ArrayList<Cell>();
@@ -27,10 +28,16 @@ public class AutoPlayer extends Player {
         {
             playableCells.addAll( cell.findCellsInline(emptyCells));
         }
-        if ( playableCells.size() == 0 ) playableCells = emptyCells;
+        if ( playableCells.size() == 0 )
+        {
+            playableCells = emptyCells;
+            for (Cell c: playableCells) c.favorable = (int)Math.floor ( Math.random() *9);
+        }
         if ( playableCells.size() == 0 ) return coordonnees;
          playableCells.sort( Cell::compareCell);
-        if (playableCells.size() == 0) System.out.println("no playableCells");
+        if (playableCells.size() == 0) vue.printError("no playableCells");// System.out.println("no playableCells");
+        //System.out.println( playableCells.toString());
+        //printFavorable();
         //System.out.println("Auto player row = " + playableCells.get(0).row + " column = " + playableCells.get(0).column);
         return playableCells.get(0).getCoordonnes();
     }
