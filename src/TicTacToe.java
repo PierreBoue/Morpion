@@ -4,17 +4,24 @@ import java.util.stream.Stream;
 
 public class TicTacToe
 {
-    final int size = 3;
-    Cell[][] plateau= new Cell[size][size];
+    int size = 3;
+    Cell[][] plateau;//= new Cell[size][size];
     Player[] players;
     public TicTacToe()
     {
-       InteractionUtilisateur interaction = new InteractionUtilisateur();
+        InteractionUtilisateur interaction = new InteractionUtilisateur();
+        int taille=0;
+        while ((taille < 3) || ( taille > 100 ))
+        {
+            taille = interaction.askForInt("Choose board size ( 3 - 99 )");
+        }
+        size = taille;
+        plateau = new Cell[size][size];
         for (int i = 0; i < size; i++ )
         {
             for (int j=0; j< size; j++)
             {
-               plateau[i][j]= new Cell( j, i );
+                plateau[i][j]= new Cell( j, i );
             }
         }
         players = new Player[2];
@@ -23,7 +30,10 @@ public class TicTacToe
             players[i]= interaction.askForPlayer( i + 1 );
         }
     }
+    private void initTableau()
+    {
 
+    }
     public void playgame() {
         display();
         View vue = new View();
