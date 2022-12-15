@@ -75,7 +75,7 @@ public class InteractionUtilisateur
                 choice = -1;
             }
         }
-        retour = ( choice == 1 )?new Player(symbol):new AutoPlayer(symbol);
+        retour = ( choice == 1 )?new HumanPlayer(symbol):new AutoPlayer(symbol);
         return retour;
     }
 

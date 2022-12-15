@@ -15,7 +15,11 @@ public class Cell {
     public String getRepresentation()
     {
         char symb = ( owner == null )? ' ':owner.symbol;
-        return"| " + symb + " ";
+        String representation = ""+ symb + "";
+       // echo "\033[1;31m rouge\033[0m noir"
+        if ( symb == 'O') representation = "\033[1;31m" + symb + "\033[0m";// rouge
+        if ( symb == 'X') representation = "\033[1;32m" + symb + "\033[0m";// vert
+        return "| " + representation + " ";
     }
     public ArrayList<Cell> findCellsInline( ArrayList<Cell> emptyCells )
     {

@@ -44,6 +44,7 @@ public class AutoPlayer extends Player {
     }
     private void printFavorable()
     {
+       // @interface marker{}
         Cell[][] plateau = Main.morpion.plateau;
         for (int ligne=0; ligne <plateau[0].length; ligne++)
         {
