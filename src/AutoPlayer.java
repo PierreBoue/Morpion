@@ -6,6 +6,7 @@ public class AutoPlayer extends Player {
     {
         super(symb);
     }
+    @Override
     public int[] play( int size )
     {
         int[] coordonnees = {-1,-1};
