@@ -21,7 +21,7 @@ public class View
     }
     public void printPlayer( Player player )
     {
-        System.out.println("Player "+ player.symbol);
+        System.out.println("Player "+ player.getColoredSymbol());
     }
     public void printWinner( Player player )
     {
@@ -30,7 +30,7 @@ public class View
             System.out.println("Nobody won!!!");
             return;
         }
-        System.out.println("Player "+ player.symbol + " won!!!");
+        System.out.println("Player "+ player.getColoredSymbol() + " won!!!");
     }
     public void printMessage( String message )
     {

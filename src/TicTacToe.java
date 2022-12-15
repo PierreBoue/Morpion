@@ -26,9 +26,11 @@ public class TicTacToe
 
     public void playgame() {
         display();
+        View vue = new View();
         Player activePlayer = players[0];
         while ( ! isOver()) {
-            System.out.println("Player " + activePlayer.symbol);
+            vue.printMessage("Player " + activePlayer.getColoredSymbol());
+            //System.out.println();
             setPlayerNewMove(activePlayer);
             if (activePlayer == players[0]) {
                 activePlayer = players[1];
