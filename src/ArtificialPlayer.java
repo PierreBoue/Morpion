@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class AutoPlayer extends Player {
-    public AutoPlayer(char symb)
+public class ArtificialPlayer extends Player {
+    public ArtificialPlayer(char symb)
     {
         super(symb);
     }
