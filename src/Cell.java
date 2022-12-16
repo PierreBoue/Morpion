@@ -4,10 +4,10 @@ import java.util.ArrayList;
 //package morpipon;
 public class Cell {
 
-    int column = -1;
-    int row = -1;
-    int favorable=0;
-    Player owner;
+    public int column = -1;
+    public int row = -1;
+    public int favorable=0;
+    public Player owner;
     public Cell( int x, int y)
     {
         column = x;

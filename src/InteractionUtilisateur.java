@@ -2,7 +2,7 @@ import java.util.Scanner;
 //package morpion;
 public class InteractionUtilisateur
 {
-    Scanner scanner = null;
+    private Scanner scanner;
     char nextPlayerSymbol;
     public InteractionUtilisateur()
     {

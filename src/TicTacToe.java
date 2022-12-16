@@ -4,9 +4,9 @@ import java.util.stream.Stream;
 //package morpion;
 public class TicTacToe
 {
-    int size = 3;
-    Cell[][] plateau;
-    Player[] players;
+    public int size = 3;
+    public Cell[][] plateau;
+    private Player[] players;
     public TicTacToe()
     {
         InteractionUtilisateur interaction = new InteractionUtilisateur();
