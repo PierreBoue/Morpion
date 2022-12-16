@@ -1,3 +1,5 @@
+
+//package morpion;
 public class HumanPlayer extends Player {
     public HumanPlayer( char symb)
     {

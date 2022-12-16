@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+//package com.macaplix.morpion;
 public class Main
 {
     public static TicTacToe morpion;

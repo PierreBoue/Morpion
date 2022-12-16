@@ -1,3 +1,4 @@
+//package morpion;
 public class View
 {
     public void displayBoard( Cell[][] board )

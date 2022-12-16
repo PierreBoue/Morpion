@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
-
+//package morpion;
 public class ArtificialPlayer extends Player {
     public ArtificialPlayer(char symb)
     {

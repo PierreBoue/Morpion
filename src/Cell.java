@@ -1,7 +1,7 @@
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
-
+//package morpipon;
 public class Cell {
 
     int column = -1;

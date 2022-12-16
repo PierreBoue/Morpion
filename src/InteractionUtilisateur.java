@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+//package morpion;
 public class InteractionUtilisateur
 {
     Scanner scanner = null;
