@@ -4,6 +4,7 @@ import java.util.Arrays;
 public class ArtificialPlayer extends Player {
     public ArtificialPlayer(char symb)
     {
+
         super(symb);
     }
     @Override

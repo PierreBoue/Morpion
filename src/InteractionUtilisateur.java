@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class InteractionUtilisateur
 {
     private Scanner scanner;
-    char nextPlayerSymbol;
+    private char nextPlayerSymbol;
     public InteractionUtilisateur()
     {
         scanner = new Scanner(System.in);

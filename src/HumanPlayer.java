@@ -3,6 +3,7 @@
 public class HumanPlayer extends Player {
     public HumanPlayer( char symb)
     {
+
         super(symb);
     }
     @Override
