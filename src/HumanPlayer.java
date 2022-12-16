@@ -3,6 +3,7 @@ public class HumanPlayer extends Player {
     {
         super(symb);
     }
+    @Override
     public int[]  play( int size )
     {
         int[] coordonees = {-1,-1};

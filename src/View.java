@@ -15,7 +15,7 @@ public class View
             {
                 System.out.print(cellule.getRepresentation());
             }
-            System.out.println( "|\n" + separateur);
+            System.out.println( "|\n" + separateur );
         }
 
     }

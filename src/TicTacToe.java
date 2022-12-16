@@ -5,7 +5,7 @@ import java.util.stream.Stream;
 public class TicTacToe
 {
     int size = 3;
-    Cell[][] plateau;//= new Cell[size][size];
+    Cell[][] plateau;
     Player[] players;
     public TicTacToe()
     {
@@ -29,10 +29,6 @@ public class TicTacToe
         {
             players[i]= interaction.askForPlayer( i + 1 );
         }
-    }
-    private void initTableau()
-    {
-
     }
     public void playgame() {
         display();

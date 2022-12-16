@@ -1,3 +1,5 @@
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 
 public class Cell {
@@ -17,7 +19,7 @@ public class Cell {
         String representation = ( owner == null )? " ":owner.getColoredSymbol();
         return "| " + representation + " ";
     }
-    public ArrayList<Cell> findCellsInline( ArrayList<Cell> emptyCells )
+    public ArrayList<Cell> findCellsInline(@NotNull ArrayList<Cell> emptyCells )
     {
         ArrayList<Cell> inlineCells = new ArrayList<Cell>();
         Cell[][] plateau = Main.morpion.plateau;
@@ -120,11 +122,12 @@ public class Cell {
        int[] coordonnes = { column, row };
         return coordonnes;
     }
-    int compareCell( Cell cell )
+    int compareCell(@NotNull Cell cell )
     {
         int sens =cell.favorable - this.favorable;
         return sens;
     }
+    @Override
     public String toString()
     {
         return "Cell "+ ((owner == null)?'?':owner.getColoredSymbol())  +" l:" + row + " c:" + column +" f:" + favorable;
