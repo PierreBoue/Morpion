@@ -11,7 +11,7 @@ public class ArtificialPlayer extends Player {
     public int[] play( int size )
     {
         int[] coordonnees = {-1,-1};
-        Cell[][] plateau = Main.morpion.plateau;
+        Cell[][] plateau = Main.morpion.board.plateau; ;//Main.morpion.plateau;
         View vue = new View();
        // System.out.println("Auto Player play....");
         ArrayList<Cell> emptyCells= new ArrayList<Cell>();
@@ -46,7 +46,7 @@ public class ArtificialPlayer extends Player {
     private void printFavorable()
     {
        // @interface marker{}
-        Cell[][] plateau = Main.morpion.plateau;
+        Cell[][] plateau = Main.morpion.board.plateau;
         for (int ligne=0; ligne <plateau[0].length; ligne++)
         {
             for (int col=0; col < plateau[0].length; col++)

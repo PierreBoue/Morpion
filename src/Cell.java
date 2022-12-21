@@ -22,9 +22,9 @@ public class Cell {
     public ArrayList<Cell> findCellsInline(@NotNull ArrayList<Cell> emptyCells )
     {
         ArrayList<Cell> inlineCells = new ArrayList<Cell>();
-        Cell[][] plateau = Main.morpion.plateau;
+        Cell[][] plateau = Main.morpion.board.plateau;
         int size = plateau[0].length;
-        Main.morpion.resetFavorable();
+        Main.morpion.board.resetFavorable();
         int countPlayerAvailableCellsInline = 0;
         int countOtherPlayerCellsInLine = 0;
         for (Cell cell:emptyCells)

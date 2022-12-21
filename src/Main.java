@@ -9,7 +9,7 @@ public class Main
        boolean stop = false;
        while ( ! stop )
        {
-           morpion = new TicTacToe();
+          morpion = new TicTacToe();
            morpion.playgame();
            String reponse ="";
            while ( reponse.isBlank())

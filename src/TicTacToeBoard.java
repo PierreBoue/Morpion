@@ -1,78 +1,23 @@
-import java.lang.System;
-import java.util.Arrays;
-import java.util.stream.Stream;
-//package morpion;
-public class TicTacToe
-{
-    public int size = 3;
-    //public Cell[][] plateau;
-    public TicTacToeBoard board;
-    private Player[] players;
-    public TicTacToe()
+public class TicTacToeBoard extends BoardGame {
+    public TicTacToeBoard( int taille )
     {
-        InteractionUtilisateur interaction = new InteractionUtilisateur();
-        int taille=0;
-        while ((taille < 3) || ( taille > 100 ))
-        {
-            taille = interaction.askForInt("Choose board size ( 3 - 99 )");
-        }
         size = taille;
-        board = new TicTacToeBoard(taille);
-        players = new Player[2];
-        for (int i=0; i<2; i++)
-        {
-            players[i]= interaction.askForPlayer( i + 1 );
-        }
+        initBoard();
     }
-    public void playgame() {
-        display();
-        View vue = new View();
-        Player activePlayer = players[0];
-        while ( ! board.isOver()) {
-            vue.printMessage("Player " + activePlayer.getColoredSymbol());
-            //System.out.println();
-            setPlayerNewMove(activePlayer);
-            if (activePlayer == players[0]) {
-                activePlayer = players[1];
-            } else {
-                activePlayer = players[0];
+    @Override
+    public void initBoard() {
+        plateau = new Cell[size][size];
+        for (int i = 0; i < size; i++ )
+        {
+            for (int j=0; j< size; j++)
+            {
+                plateau[i][j]= new Cell( j, i );
             }
         }
     }
 
-    public void setPlayerNewMove( Player player )
-    {
-        boolean ok = false;
-        View vue = new View();
-        int[] coordonnees = {-1,-1};
-        Cell[][] plateau = board.plateau;
-        int i=0;
-        while (! ok )
-        {
-            coordonnees = player.play( size );
-            if (( coordonnees[0] < 0 ) || ( coordonnees[0] >= size ))
-            {
-                vue.printError("Column number should be between 0 and " + ( size - 1));
-            } else if (( coordonnees[1] < 0 ) || ( coordonnees[1] >= size )) {
-                vue.printError("Line number should be between 0 and " + ( size - 1));
-            } else if ( plateau[coordonnees[1]][ coordonnees[0]].owner != null ) {
-                vue.printError("The cell " + coordonnees[0] + " - " + coordonnees[1] + " is already taken, choose another");
-                if ( i++ > 10 ) break;
-            } else {
-                ok = true;
-                plateau[coordonnees[1]][coordonnees[0]].owner = player;
-                display();
-            }
-        }
-    }
-    public void display()
-    {
-        View vue = new View();
-        vue.displayBoard(board.plateau);
-    }
-    /*
-    private boolean isOver()
-    {
+    @Override
+    public boolean isOver() {
         View vue = new View();
         int nbrevide=0;
         for ( int ligne=0; ligne < size; ligne++ ) //verification alignement lignes
@@ -81,13 +26,13 @@ public class TicTacToe
             char coup  = '?';
             for ( int col=0; col < size; col++)
             {
-               Cell cel = plateau[ligne][col];
-               if ( cel.owner == null )
-               {
-                  nbrevide++;
-                   continue;
-               }
-               if ( col == 0 )
+                Cell cel = plateau[ligne][col];
+                if ( cel.owner == null )
+                {
+                    nbrevide++;
+                    continue;
+                }
+                if ( col == 0 )
                 {
                     coup = cel.owner.symbol;
                     nbrealign++;
@@ -97,7 +42,7 @@ public class TicTacToe
                         nbrealign++;
                         if ( nbrealign >= size )
                         {
-                           // System.out.println("Player " +  coup + " won ( horizontal )!!");
+                            // System.out.println("Player " +  coup + " won ( horizontal )!!");
                             vue.printWinner(cel.owner);
                             return true;
                         }
@@ -197,19 +142,7 @@ public class TicTacToe
             vue.printWinner(null);
             return true;
         }
+
         return false;
     }
-    public void resetFavorable()
-    {
-        for (int i = 0; i < size; i++ )
-        {
-            for (int j=0; j< size; j++)
-            {
-                plateau[i][j].favorable=0;
-            }
-        }
-
-    }
-
-     */
 }
