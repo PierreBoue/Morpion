@@ -52,8 +52,8 @@ public class Cell {
             }
             if ( cell.row == this.row )
             {
-                countPlayerAvailableCellsInline = 0;
-                countOtherPlayerCellsInLine = 0;
+                //countPlayerAvailableCellsInline = 0;
+               // countOtherPlayerCellsInLine = 0;
                 for (int col =0 ; col < size; col++)
                 {
                     if ((plateau[this.row][col].owner == cell.owner) || (plateau[this.row][col].owner == null )) countPlayerAvailableCellsInline++;
@@ -73,8 +73,8 @@ public class Cell {
             }
             if (cell.column - this.column == cell.row - this.row)
             {
-                countPlayerAvailableCellsInline = 0;
-                countOtherPlayerCellsInLine = 0;
+                //countPlayerAvailableCellsInline = 0;
+                //countOtherPlayerCellsInLine = 0;
                 for ( int i =0; i < size; i++)
                 {
                     if ((plateau[i][i].owner == cell.owner) || (plateau[i][i].owner == null )) countPlayerAvailableCellsInline++;
@@ -91,8 +91,8 @@ public class Cell {
                     cell.favorable += 5;
                     if ( ! inlineCells.contains(cell)) inlineCells.add(cell);
                 }
-                countPlayerAvailableCellsInline = 0;
-                countOtherPlayerCellsInLine = 0;
+                //countPlayerAvailableCellsInline = 0;
+                //countOtherPlayerCellsInLine = 0;
                 for ( int i =size-1; i >=0; i--)
                 {
                     if ((plateau[i][i].owner == cell.owner) || (plateau[i][i].owner == null )) countPlayerAvailableCellsInline++;
