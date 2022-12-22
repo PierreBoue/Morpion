@@ -1,6 +1,8 @@
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+
 public class Cell {
 
     public int column = -1;
@@ -24,6 +26,14 @@ public class Cell {
         Cell[][] plateau = Main.morpion.board.plateau;
         int size = plateau[0].length;
         Main.morpion.board.resetFavorable();
+        // en test
+        HashMap<String,Integer> playerAlignCount = new HashMap<String, Integer>();
+        playerAlignCount.put("vertical", 0);
+        playerAlignCount.put("horizontal", 0);
+        playerAlignCount.put("diagonaleG", 0);
+        playerAlignCount.put("diagonaleD", 0 );
+        HashMap<String,Integer> otherPlayerAlignCount = new HashMap<String, Integer>( playerAlignCount );
+        // fin partie en test
         int countPlayerAvailableCellsInline = 0; // compteur de cellule pour un coup offensif
         int countOtherPlayerCellsInLine = 0; // compteur de cellule pour un coup défensif
         for (Cell cell:emptyCells) // parcours les cellules vides
