@@ -1,5 +1,5 @@
 import java.util.Scanner;
-//package morpion;
+// classe mère des joueurs de tout type
 public abstract class Player
 {
     public char symbol;

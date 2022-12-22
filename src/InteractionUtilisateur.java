@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class InteractionUtilisateur
 {
     private Scanner scanner;
-    private char nextPlayerSymbol;
+    private char nextPlayerSymbol; // contient le symbole du prochain joueur quand l'autre symbole a déjà été choisit
     public InteractionUtilisateur()
     {
         scanner = new Scanner(System.in);

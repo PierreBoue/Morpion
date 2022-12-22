@@ -7,7 +7,7 @@ public class HumanPlayer extends Player {
         super(symb);
     }
     @Override
-    public int[]  play( int size )
+    public int[]  play( int size ) // jeux par un humain
     {
         int[] coordonees = {-1,-1};
         InteractionUtilisateur interaction = new InteractionUtilisateur();

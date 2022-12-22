@@ -1,6 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
-//package morpion;
 public class ArtificialPlayer extends Player {
     public ArtificialPlayer(char symb)
     {
@@ -8,10 +6,10 @@ public class ArtificialPlayer extends Player {
         super(symb);
     }
     @Override
-    public int[] play( int size )
+    public int[] play( int size ) //jeux automatique
     {
         int[] coordonnees = {-1,-1};
-        Cell[][] plateau = Main.morpion.board.plateau; ;//Main.morpion.plateau;
+        Cell[][] plateau = Main.morpion.board.plateau; ;
         View vue = new View();
        // System.out.println("Auto Player play....");
         ArrayList<Cell> emptyCells= new ArrayList<Cell>();
@@ -38,14 +36,11 @@ public class ArtificialPlayer extends Player {
         if ( playableCells.size() == 0 ) return coordonnees;
          playableCells.sort( Cell::compareCell);
         if (playableCells.size() == 0) vue.printError("no playableCells");// System.out.println("no playableCells");
-        //System.out.println( playableCells.toString());
-        //printFavorable();
-        //System.out.println("Auto player row = " + playableCells.get(0).row + " column = " + playableCells.get(0).column);
+         //printFavorable();
         return playableCells.get(0).getCoordonnes();
     }
-    private void printFavorable()
+    private void printFavorable() // pour debuggage uniquement
     {
-       // @interface marker{}
         Cell[][] plateau = Main.morpion.board.plateau;
         for (int ligne=0; ligne <plateau[0].length; ligne++)
         {

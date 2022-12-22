@@ -5,13 +5,13 @@ public class View
     {
         String separateur = "";
         int size = board[0].length;
-        for (int i = 0; i < (size * 4 + 4); i++ ) separateur += ( i < 4 )?' ':'_';// 4 taille d'une cellule
+        for (int i = 0; i < (size * 4 + 4); i++ ) separateur += ( i < 4 )?' ':'_';// 4 est la taille d'une cellule
         System.out.print("    ");
-        for (int i=0; i < size; i++) System.out.print(" " + i + "  ");
+        for (int i=0; i < size; i++) System.out.print(" " + i + " " + ((i < 10)?" ":""));
         System.out.println("\n" + separateur);
         for (int i=0; i < size; i++)
         {
-            System.out.print(" " + i + " ");
+            System.out.print(" " + i + ((i < 10)?" ":""));
             for ( Cell cellule : board[i])
             {
                 System.out.print(cellule.getRepresentation());

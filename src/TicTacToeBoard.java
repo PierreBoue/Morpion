@@ -1,23 +1,10 @@
 public class TicTacToeBoard extends BoardGame {
     public TicTacToeBoard( int taille )
     {
-        size = taille;
-        initBoard();
+        super(taille);
     }
     @Override
-    public void initBoard() {
-        plateau = new Cell[size][size];
-        for (int i = 0; i < size; i++ )
-        {
-            for (int j=0; j< size; j++)
-            {
-                plateau[i][j]= new Cell( j, i );
-            }
-        }
-    }
-
-    @Override
-    public boolean isOver() {
+    public boolean isOver() { // verif gagnant
         View vue = new View();
         int nbrevide=0;
         for ( int ligne=0; ligne < size; ligne++ ) //verification alignement lignes
@@ -42,7 +29,6 @@ public class TicTacToeBoard extends BoardGame {
                         nbrealign++;
                         if ( nbrealign >= size )
                         {
-                            // System.out.println("Player " +  coup + " won ( horizontal )!!");
                             vue.printWinner(cel.owner);
                             return true;
                         }
@@ -67,7 +53,6 @@ public class TicTacToeBoard extends BoardGame {
                 }
                 if ( ligne == 0 )
                 {
-                    //coup = cel.owner.symbol;
                     nbrealign++;
                 } else {
                     if ( coup == cel.owner.symbol )
@@ -75,7 +60,6 @@ public class TicTacToeBoard extends BoardGame {
                         nbrealign++;
                         if ( nbrealign >= size )
                         {
-                            //System.out.println("Player " +  coup + " won ( vertical )!!");
                             vue.printWinner(cel.owner);
                             return true;
                         }
@@ -124,7 +108,6 @@ public class TicTacToeBoard extends BoardGame {
                     if (coup == cel.owner.symbol) {
                         nbrealign++;
                         if (nbrealign >= size) {
-                            //System.out.println("Player " + coup + " won ( diagonal TR ) !!");
                             vue.printWinner(cel.owner);
                             return true;
                         }
