@@ -4,37 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0af2408e-57f8-4f57-9679-46e3079f5579" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Morpion.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/morpion/controller/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Morpion/ArtificialPlayer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Morpion/BoardGame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Morpion/Cell.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Morpion/HumanPlayer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Morpion/InteractionUtilisateur.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Morpion/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Morpion/Morpion.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Morpion/Player.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Morpion/TicTacToe.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Morpion/TicTacToeBoard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Morpion/View.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ArtificialPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/model/ArtificialPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BoardGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/model/BoardGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/model/Cell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HumanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/model/HumanPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InteractionUtilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/view/InteractionUtilisateur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Morpion.iml" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/Morpion.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/model/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TicTacToe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/controller/TicTacToe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TicTacToeBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/model/TicTacToeBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/view/View.java" afterDir="false" />
-    </list>
+    <list default="true" id="0af2408e-57f8-4f57-9679-46e3079f5579" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -115,7 +85,7 @@
       <option name="presentableId" value="Default" />
       <updated>1671796820764</updated>
       <workItem from="1671796822908" duration="823000" />
-      <workItem from="1671797718124" duration="341000" />
+      <workItem from="1671797718124" duration="926000" />
     </task>
     <servers />
   </component>
