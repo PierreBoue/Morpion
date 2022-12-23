@@ -1,12 +1,16 @@
+package morpion.model;
+
+import morpion.controller.Main;
 import org.jetbrains.annotations.NotNull;
+//import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 //import java.util.HashMap;
 
 public class Cell {
 
-    public int column = -1;
-    public int row = -1;
+    public int column;
+    public int row;
     public int favorable=0;
     public Player owner;
     public Cell( int x, int y)

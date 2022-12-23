@@ -1,4 +1,8 @@
-import java.util.Scanner;
+package morpion.controller;
+
+//import morpion.controller.TicTacToe;
+import morpion.view.InteractionUtilisateur;
+
 //package com.macaplix.morpion;
 public class Main
 {

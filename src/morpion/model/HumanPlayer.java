@@ -1,3 +1,6 @@
+package morpion.model;
+
+import morpion.view.InteractionUtilisateur;
 
 //package morpion;
 public class HumanPlayer extends Player {

@@ -1,3 +1,8 @@
+package morpion.view;
+
+import morpion.model.Cell;
+import morpion.model.Player;
+
 //package morpion;
 public class View
 {

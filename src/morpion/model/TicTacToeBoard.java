@@ -1,3 +1,7 @@
+package morpion.model;
+
+import morpion.view.View;
+
 public class TicTacToeBoard extends BoardGame {
     public TicTacToeBoard( int taille )
     {

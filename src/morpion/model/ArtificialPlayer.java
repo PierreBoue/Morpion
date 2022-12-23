@@ -1,3 +1,8 @@
+package morpion.model;
+
+import morpion.controller.Main;
+import morpion.view.View;
+
 import java.util.ArrayList;
 public class ArtificialPlayer extends Player {
     public ArtificialPlayer(char symb)

@@ -1,3 +1,5 @@
+package morpion.model;
+
 public abstract class BoardGame // classe mère des plateaux de jeu
 {
     public Cell[][] plateau;

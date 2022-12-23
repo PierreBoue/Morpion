@@ -1,6 +1,11 @@
-import java.lang.System;
-import java.util.Arrays;
-import java.util.stream.Stream;
+package morpion.controller;
+
+import morpion.model.Cell;
+import morpion.model.Player;
+import morpion.model.TicTacToeBoard;
+import morpion.view.InteractionUtilisateur;
+import morpion.view.View;
+
 //package morpion;
 public class TicTacToe
 {

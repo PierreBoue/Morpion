@@ -1,3 +1,5 @@
+package morpion.model;
+
 import java.util.Scanner;
 // classe mère des joueurs de tout type
 public abstract class Player

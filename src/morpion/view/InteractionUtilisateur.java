@@ -1,3 +1,9 @@
+package morpion.view;
+
+import morpion.model.ArtificialPlayer;
+import morpion.model.HumanPlayer;
+import morpion.model.Player;
+
 import java.util.Scanner;
 //package morpion;
 public class InteractionUtilisateur
@@ -46,7 +52,7 @@ public class InteractionUtilisateur
         }
         return reponse;
     }
-    public Player askForPlayer( int playerindex )
+    public Player askForPlayer(int playerindex )
     {
         View vue = new View();
         Player retour=null;
