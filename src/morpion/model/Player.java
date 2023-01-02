@@ -16,5 +16,5 @@ public abstract class Player
         if ( symbol == 'X') representation = "\033[1;32m" + symbol + "\033[0m";// vert
         return representation;
     }
-    public abstract int[]  play( int size );
+    public abstract int[]  play( BoardGame board );
 }

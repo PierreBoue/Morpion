@@ -1,30 +1,40 @@
 package morpion.controller;
 
+import morpion.model.BoardGame;
 import morpion.model.Cell;
 import morpion.model.Player;
 import morpion.model.TicTacToeBoard;
-//import morpion.view.InteractionUtilisateur;
+import morpion.view.InteractionUtilisateur;
 import morpion.view.View;
 
-//package morpion;
-public class TicTacToe extends Game
-{
-    //public int size = 3;
-    //public Cell[][] plateau;
-    //public TicTacToeBoard board; //encapsule le plateau de jeu
-    //private Player[] players;
-    public TicTacToe()
+public abstract class Game {
+    protected Player[] players;
+    public BoardGame board;
+    public Game()
     {
-        super();
+        InteractionUtilisateur interaction = new InteractionUtilisateur();
+        int taille = getBoardSize();
+        setBoard( taille );
+        //board = new TicTacToeBoard(taille);
+        players = new Player[2];
+        for (int i=0; i<2; i++)
+        {
+            players[i]= interaction.askForPlayer( i + 1 );
+        }
     }
-
-    @Override
-    protected void setBoard(int size)
+    protected int getBoardSize( )
     {
-        board = new TicTacToeBoard( size );
+        InteractionUtilisateur interaction = new InteractionUtilisateur();
+        int taille=0;
+        while ((taille < 3) || ( taille > 99 ))
+        {
+            taille = interaction.askForInt("Choose board size ( 3 - 99 )");
+        }
+        return taille;
     }
-    /*
-    public void playgame() {
+    protected abstract void setBoard( int size );
+    public void playgame()
+    {
         display();// affiche le plateau vide
         View vue = new View();
         Player activePlayer = players[0];
@@ -33,10 +43,10 @@ public class TicTacToe extends Game
             setPlayerNewMove(activePlayer);
             if (activePlayer == players[0])
                 activePlayer = players[1];
-             else  activePlayer = players[0];
+            else  activePlayer = players[0];
         }
+
     }
-    */
     public void setPlayerNewMove( Player player ) // demande au player passé en argument de jouer et met à jour le plateau avec le coup joué
     {
         boolean ok = false;

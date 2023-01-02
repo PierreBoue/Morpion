@@ -5,12 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0af2408e-57f8-4f57-9679-46e3079f5579" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/morpion/controller/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/morpion/controller/GameFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/morpion/controller/Gomoku.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/morpion/controller/GomokuBoard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/morpion/controller/Puissance4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/morpion/controller/Puissance4Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Morpion/morpion/controller/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Morpion/morpion/controller/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Morpion/morpion/controller/TicTacToe.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Morpion/morpion/controller/TicTacToe.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Morpion/morpion/model/ArtificialPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Morpion/morpion/model/ArtificialPlayer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Morpion/morpion/model/Cell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Morpion/morpion/model/Cell.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/morpion/controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/controller/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/morpion/controller/TicTacToe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/controller/TicTacToe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/morpion/model/ArtificialPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/model/ArtificialPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/morpion/model/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/model/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/morpion/model/HumanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/model/HumanPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/morpion/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/model/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -22,6 +45,9 @@
     <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2JJWlqvQ5Mom7RVeM5xjS8EocSs" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -88,7 +114,7 @@
       <updated>1671796820764</updated>
       <workItem from="1671796822908" duration="823000" />
       <workItem from="1671797718124" duration="1507000" />
-      <workItem from="1672655676019" duration="726000" />
+      <workItem from="1672655676019" duration="11420000" />
     </task>
     <servers />
   </component>

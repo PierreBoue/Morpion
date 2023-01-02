@@ -10,12 +10,12 @@ public class HumanPlayer extends Player {
         super(symb);
     }
     @Override
-    public int[]  play( int size ) // jeux par un humain
+    public int[]  play( BoardGame board ) // jeux par un humain
     {
         int[] coordonees = {-1,-1};
         InteractionUtilisateur interaction = new InteractionUtilisateur();
-        coordonees[0] = interaction.askForInt("Entrez le numéro de colonne ( 0 - " + (size -1) + " ) :");
-        coordonees[1] = interaction.askForInt("Entrez le numéro de ligne ( 0 - " + (size -1) + " )  :");
+        coordonees[0] = interaction.askForInt("Entrez le numéro de colonne ( 0 - " + (board.size -1) + " ) :");
+        coordonees[1] = interaction.askForInt("Entrez le numéro de ligne ( 0 - " + (board.size -1) + " )  :");
         return coordonees;
     }
 

@@ -6,15 +6,15 @@ import morpion.view.InteractionUtilisateur;
 //package com.macaplix.morpion;
 public class Main
 {
-    public static TicTacToe morpion; //Main instancie et stock l'instance du jeu TicTacToe
+    private static Game game; //Main instancie et stock l'instance du jeu TicTacToe
     public static void main(String[] args)
     {
        InteractionUtilisateur interaction = new InteractionUtilisateur();
        boolean stop = false;
        while ( ! stop )
        {
-          morpion = new TicTacToe();
-          morpion.playgame();
+          game = GameFactory.getGame();
+          game.playgame();
           String reponse ="";
           while ( reponse.isBlank())
           {
