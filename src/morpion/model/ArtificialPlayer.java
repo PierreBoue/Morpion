@@ -1,7 +1,7 @@
 package morpion.model;
 
 import morpion.controller.Main;
-import morpion.view.View;
+import morpion.view.ConsoleView;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -16,7 +16,7 @@ public class ArtificialPlayer extends Player {
     {
         int[] coordonnees = {-1,-1};
         Cell[][] plateau = board.plateau; ;
-        View vue = new View();
+        ConsoleView vue = new ConsoleView();
         ArrayList<Cell> emptyCells= new ArrayList<Cell>();
         ArrayList<Cell> thisCells= new ArrayList<Cell>();
         for (int ligne=0; ligne < board.size; ligne++)
@@ -53,6 +53,7 @@ public class ArtificialPlayer extends Player {
         board.resetFavorable();
         // en test
 /*
+
         HashMap<String,Integer> playerAlignCount = new HashMap<String, Integer>();
         playerAlignCount.put("vertical", 0);
         playerAlignCount.put("horizontal", 0);

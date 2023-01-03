@@ -17,7 +17,7 @@ public class InteractionUtilisateur
     }
     public int askForInt( String message)
     {
-        View vue = new View();
+        ConsoleView vue = new ConsoleView();
         int reponse = -1;
         vue.printMessage(message);
         while ( reponse < 0)
@@ -35,7 +35,7 @@ public class InteractionUtilisateur
     }
     public String askForString( String message )
     {
-        View vue = new View();
+        ConsoleView vue = new ConsoleView();
         String reponse = null;
         vue.printMessage(message);
 
@@ -54,7 +54,7 @@ public class InteractionUtilisateur
     }
     public Player askForPlayer(int playerindex )
     {
-        View vue = new View();
+        ConsoleView vue = new ConsoleView();
         Player retour=null;
         //vue.printMessage("");
         int choice = -1;

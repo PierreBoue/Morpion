@@ -4,15 +4,11 @@ import morpion.model.Cell;
 import morpion.model.Player;
 import morpion.model.TicTacToeBoard;
 //import morpion.view.InteractionUtilisateur;
-import morpion.view.View;
+import morpion.view.ConsoleView;
 
 //package morpion;
 public class TicTacToe extends Game
 {
-    //public int size = 3;
-    //public Cell[][] plateau;
-    //public TicTacToeBoard board; //encapsule le plateau de jeu
-    //private Player[] players;
     public TicTacToe()
     {
         super();
@@ -23,24 +19,10 @@ public class TicTacToe extends Game
     {
         board = new TicTacToeBoard( size );
     }
-    /*
-    public void playgame() {
-        display();// affiche le plateau vide
-        View vue = new View();
-        Player activePlayer = players[0];
-        while ( ! board.isOver()) { // boucle principale du jeu
-            vue.printMessage("Player " + activePlayer.getColoredSymbol());
-            setPlayerNewMove(activePlayer);
-            if (activePlayer == players[0])
-                activePlayer = players[1];
-             else  activePlayer = players[0];
-        }
-    }
-    */
     public void setPlayerNewMove( Player player ) // demande au player passé en argument de jouer et met à jour le plateau avec le coup joué
     {
         boolean ok = false;
-        View vue = new View();
+        ConsoleView vue = new ConsoleView();
         int[] coordonnees = {-1,-1};
         Cell[][] plateau = board.plateau;
         int i=0;
@@ -64,7 +46,7 @@ public class TicTacToe extends Game
     }
     public void display()// affichage du plateau par la vue
     {
-        View vue = new View();
+        ConsoleView vue = new ConsoleView();
         vue.displayBoard(board.plateau);
     }
 }

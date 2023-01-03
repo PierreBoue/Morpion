@@ -1,6 +1,7 @@
 package morpion.model;
 
-import morpion.view.View;
+import morpion.view.ConsoleView;
+//import morpion.view.View;
 
 public class TicTacToeBoard extends BoardGame {
     public TicTacToeBoard( int taille )
@@ -9,7 +10,7 @@ public class TicTacToeBoard extends BoardGame {
     }
     @Override
     public boolean isOver() { // verif gagnant
-        View vue = new View();
+        ConsoleView vue = new ConsoleView();
         int nbrevide=0;
         for ( int ligne=0; ligne < size; ligne++ ) //verification alignement lignes
         {
