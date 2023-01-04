@@ -15,6 +15,7 @@ public class GomokuBoard extends BoardGame {
         ConsoleView vue = new ConsoleView();
         int nbrevide=0;
         int nbrealign=0;
+        final  int WINnbreALIGN = 5;
         char lastowner = '?';
         for ( int ligne=0; ligne < size; ligne++ ) //verification alignement lignes
         {
@@ -29,32 +30,22 @@ public class GomokuBoard extends BoardGame {
                     nbrealign = 0;
                     lastowner = '?';
                     continue;
-                }
-//                if ( nbrealign == 0 )
-//                {
-//                    lastowner = cel.owner.symbol;
-//                    nbrealign++;
-//                } else {
-                    if ( lastowner == cel.owner.symbol )
+                } else if ( lastowner == cel.owner.symbol ) {
+                    nbrealign++;
+                    if ( nbrealign >= WINnbreALIGN)
                     {
-                        nbrealign++;
-                        if ( nbrealign >= 5 )
-                        {
-                            System.out.println("horizontal win");
-                            vue.printWinner(cel.owner);
-                            return true;
-                        }
-                    } else {
-                        nbrealign =1;
-                        lastowner = cel.owner.symbol;
+                        System.out.println("horizontal win");
+                        vue.printWinner(cel.owner);
+                        return true;
                     }
-                    lastowner = cel.owner.symbol;
-                //}
+                } else {
+                    nbrealign =1;
+                    //lastowner = cel.owner.symbol;
+                }
+                lastowner = cel.owner.symbol;
             }
-            System.out.println("horizontal : " + nbrealign);
+            //System.out.println("horizontal : " + nbrealign);
         }
-
-        //nbrealign=0;
         lastowner  = '?';
         for ( int col=0; col < size; col++) // vérification alignement colonnes
         {
@@ -64,80 +55,77 @@ public class GomokuBoard extends BoardGame {
                 Cell cel = plateau[ligne][col];
                 if ( cel.owner == null )
                 {
-                    nbrevide++;
                     nbrealign = 0;
                     lastowner = '?';
                     continue;
-                }
-//                if ( nbrealign == 0 )
-//                {
-//                    nbrealign++;
-//                } else {
-                    if ( lastowner == cel.owner.symbol )
+                } else if ( lastowner == cel.owner.symbol ) {
+                    nbrealign++;
+                    if ( nbrealign >= WINnbreALIGN)
                     {
-                        nbrealign++;
-                        if ( nbrealign >= 5 )
-                        {
-                            System.out.println("vertical win");
-                            vue.printWinner(cel.owner);
-                            return true;
-                        }
-                    } else {
-                        nbrealign =1;
-                        lastowner = cel.owner.symbol;
+                        System.out.println("vertical win");
+                        vue.printWinner(cel.owner);
+                        return true;
                     }
- //               }
+                } else {
+                    nbrealign =1;
+                }
                 lastowner = cel.owner.symbol;
             }
-            System.out.println("vertical : " + nbrealign);
+            //System.out.println("vertical : " + nbrealign);
         }
-
-        nbrealign = 0;
-        lastowner = '?';
-        for (int i=0; i < size; i++ ) // diagonale partant en haut à gauche
+        int deltamax = size - WINnbreALIGN;
+        for ( int delta= -deltamax; delta < deltamax; delta++ )
         {
-            Cell cel = plateau[i][i];
-            if ( cel.owner != null)
+            nbrealign = 0;
+            lastowner = '?';
+            for (int i = 0; i < size; i++) // diagonale partant en haut à gauche
             {
-//                if (nbrealign == 0) {
-//                    nbrealign++;
-//                } else {
+                int ligne, col;
+                ligne = ( delta < 0)?i-delta:i;
+                col = ( delta < 0 )?i:delta+i;
+                if (( ligne >=size ) || ( col >= size )) continue;
+                Cell cel = plateau[ligne][col];
+                if (cel.owner == null) {
+                    nbrealign = 0;
+                    lastowner = '?';
+                    //continue;
+                } else {
                     if (lastowner == cel.owner.symbol) {
                         nbrealign++;
-                        if (nbrealign >= 5) {
+                        if (nbrealign >= WINnbreALIGN) {
                             System.out.println("diagonale 1 win");
                             vue.printWinner(cel.owner);
                             return true;
                         }
                     } else {
                         nbrealign = 1;
-                       // lastowner = cel.owner.symbol;
-                        //continue;//break;
+                        lastowner = cel.owner.symbol;
                     }
-
-               // }
-                lastowner = cel.owner.symbol;
-            } else {
-                nbrealign = 0;
-                nbrevide++;
-                lastowner = '?';
+                }
             }
         }
         System.out.println("diagonale 1 : " + nbrealign);
         nbrealign =0;
         lastowner = '?';
-        for (int i=0; i < size; i++ ) // diagonale partant en haut à droite
+        for ( int delta= -deltamax; delta < deltamax; delta++ )
         {
-            Cell cel = plateau[i][size -i -1];
-            if ( cel.owner != null)
+            for (int i = 0; i < size; i++) // diagonale partant en haut à droite
             {
-//                if (nbrealign == 0) {
-//                    nbrealign++;
-//                } else {
+                int ligne, col;
+                ligne = ( delta < 0)?i-delta:i;
+                col = size - i - 1;
+                col = ( delta < 0 )?col:delta+col;
+                if (( ligne >=size ) || ( col >= size )) continue;
+                Cell cel = plateau[ligne][col];
+                if (cel.owner == null) {
+                    lastowner = '?';
+                    nbrealign = 0;
+                    // nbrevide++;
+                } else {
                     if (lastowner == cel.owner.symbol)
                     {
                         nbrealign++;
-                        if (nbrealign >= 5)
+                        if (nbrealign >= WINnbreALIGN)
                         {
                             System.out.println("diagonale 2 win");
                             vue.printWinner(cel.owner);
@@ -145,16 +133,10 @@ public class GomokuBoard extends BoardGame {
                         }
                     } else {
                         nbrealign = 1;
-                        //lastowner = cel.owner.symbol;
-                        //continue;//break;
+                        lastowner = cel.owner.symbol;
                     }
 
-                //}
-                lastowner = cel.owner.symbol;
-            } else {
-                lastowner ='?';
-                nbrealign = 0;
-                nbrevide++;
+                }
             }
         }
         System.out.println("diagonale 2 : " + nbrealign);
