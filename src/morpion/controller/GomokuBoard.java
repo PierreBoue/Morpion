@@ -93,7 +93,7 @@ public class GomokuBoard extends BoardGame {
                     if (lastowner == cel.owner.symbol) {
                         nbrealign++;
                         if (nbrealign >= WINnbreALIGN) {
-                            System.out.println("diagonale 1 win");
+                            //System.out.println("diagonale 1 win");
                             vue.printWinner(cel.owner);
                             return true;
                         }
@@ -104,7 +104,7 @@ public class GomokuBoard extends BoardGame {
                 }
             }
         }
-        System.out.println("diagonale 1 : " + nbrealign);
+        //System.out.println("diagonale 1 : " + nbrealign);
         nbrealign =0;
         lastowner = '?';
         for ( int delta= -deltamax; delta < deltamax; delta++ )
@@ -127,7 +127,7 @@ public class GomokuBoard extends BoardGame {
                         nbrealign++;
                         if (nbrealign >= WINnbreALIGN)
                         {
-                            System.out.println("diagonale 2 win");
+                           // System.out.println("diagonale 2 win");
                             vue.printWinner(cel.owner);
                             return true;
                         }
@@ -139,7 +139,7 @@ public class GomokuBoard extends BoardGame {
                 }
             }
         }
-        System.out.println("diagonale 2 : " + nbrealign);
+       // System.out.println("diagonale 2 : " + nbrealign);
         if ( nbrevide == 0 )
         {
             vue.printWinner(null);

@@ -6,8 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="0af2408e-57f8-4f57-9679-46e3079f5579" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Morpion/morpion/controller/GomokuBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Morpion/morpion/controller/GomokuBoard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Morpion/morpion/controller/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Morpion/morpion/controller/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Morpion/morpion/controller/Puissance4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Morpion/morpion/controller/Puissance4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Morpion/morpion/controller/TicTacToe.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Morpion/morpion/controller/TicTacToe.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/morpion/controller/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/controller/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/morpion/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/controller/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/morpion/controller/GomokuBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/controller/GomokuBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/morpion/controller/Puissance4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/controller/Puissance4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/morpion/controller/TicTacToe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/controller/TicTacToe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/morpion/model/ArtificialPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/model/ArtificialPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/morpion/model/HumanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/model/HumanPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/morpion/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/model/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +119,11 @@
       <workItem from="1672732795100" duration="14565000" />
       <workItem from="1672751718815" duration="4957000" />
       <workItem from="1672757916510" duration="3347000" />
-      <workItem from="1672819327413" duration="5058000" />
+      <workItem from="1672819327413" duration="8102000" />
+      <workItem from="1672835286237" duration="128000" />
+      <workItem from="1672840292552" duration="770000" />
+      <workItem from="1672844294533" duration="59000" />
+      <workItem from="1672845088926" duration="1076000" />
     </task>
     <servers />
   </component>

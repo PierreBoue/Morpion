@@ -12,7 +12,7 @@ public class ArtificialPlayer extends Player {
         super(symb);
     }
     @Override
-    public int[] play( BoardGame board) //jeux automatique
+    public int[] play( BoardGame board, int dimension) //jeux automatique
     {
         int[] coordonnees = {-1,-1};
         Cell[][] plateau = board.plateau; ;

@@ -10,13 +10,14 @@ import morpion.view.InteractionUtilisateur;
 
 public abstract class Game {
     protected Player[] players;
+    protected int playDimension;
     public BoardGame board;
     public Game()
     {
+        playDimension = 2;
         InteractionUtilisateur interaction = new InteractionUtilisateur();
         int taille = getBoardSize();
         setBoard( taille );
-        //board = new TicTacToeBoard(taille);
         players = new Player[2];
         for (int i=0; i<2; i++)
         {
@@ -39,7 +40,8 @@ public abstract class Game {
         display();// affiche le plateau vide
         ConsoleView vue = new ConsoleView();
         Player activePlayer = players[0];
-        while ( ! board.isOver()) { // boucle principale du jeu
+        while ( ! board.isOver())
+        { // boucle principale du jeu
             vue.printMessage("Player " + activePlayer.getColoredSymbol());
             setPlayerNewMove(activePlayer);
             if (activePlayer == players[0])
@@ -48,7 +50,8 @@ public abstract class Game {
         }
 
     }
-    public void setPlayerNewMove( Player player ) // demande au player passé en argument de jouer et met à jour le plateau avec le coup joué
+    // demande au player passé en argument de jouer et met à jour le plateau avec le coup joué
+    public void setPlayerNewMove( Player player)
     {
         boolean ok = false;
         ConsoleView vue = new ConsoleView();
@@ -57,7 +60,7 @@ public abstract class Game {
         int i=0;
         while (! ok )
         {
-            coordonnees = player.play( board ); //récupère le coup joué
+            coordonnees = player.play( board, playDimension ); //récupère le coup joué
             if (( coordonnees[0] < 0 ) || ( coordonnees[0] >= board.size )) // contrôle de la validité du coup
             {
                 vue.printError("Column number should be between 0 and " + ( board.size - 1));

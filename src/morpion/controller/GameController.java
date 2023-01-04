@@ -10,7 +10,7 @@ public class GameController {
         InteractionUtilisateur interaction = new InteractionUtilisateur();
         while ( state.getState() != GameState.FINISH )
         {
-          state.nextState();
+            state.nextState();
             switch (state.getState())
             {
                 case READY -> {
