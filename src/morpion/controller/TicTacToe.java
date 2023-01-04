@@ -3,7 +3,6 @@ package morpion.controller;
 import morpion.model.Cell;
 import morpion.model.Player;
 import morpion.model.TicTacToeBoard;
-//import morpion.view.InteractionUtilisateur;
 import morpion.view.ConsoleView;
 
 //package morpion;

@@ -40,7 +40,6 @@ public class GomokuBoard extends BoardGame {
                     }
                 } else {
                     nbrealign =1;
-                    //lastowner = cel.owner.symbol;
                 }
                 lastowner = cel.owner.symbol;
             }

@@ -23,12 +23,11 @@ public class GameFactory {
                case 2: /// Gomoku
                    game =  new Gomoku();
                    break;
-               case 3: /// Gomoku
+               case 3: /// Puissance 4
                    game =  new Puissance4();
                    break;
                default:
                    System.out.println("Please enter a value between 1 and 3");
-
            }
        }
         return game;
