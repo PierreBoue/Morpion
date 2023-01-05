@@ -1,6 +1,6 @@
 package morpion.controller;
 
-import morpion.model.Player;
+import morpion.model.GomokuBoard;
 
 public class Gomoku extends Game {
     @Override

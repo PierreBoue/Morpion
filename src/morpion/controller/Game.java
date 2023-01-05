@@ -6,9 +6,11 @@ import morpion.model.Player;
 import morpion.model.TicTacToeBoard;
 import morpion.view.ConsoleView;
 import morpion.view.InteractionUtilisateur;
+
+import java.io.Serializable;
 //import morpion.view.View;
 
-public abstract class Game {
+public abstract class Game implements Serializable {
     protected Player[] players;
     protected int playDimension;
     public BoardGame board;

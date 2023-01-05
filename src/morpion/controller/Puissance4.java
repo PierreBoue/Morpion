@@ -1,6 +1,6 @@
 package morpion.controller;
 
-import morpion.model.Player;
+import morpion.model.Puissance4Board;
 
 public class Puissance4 extends Game {
     public Puissance4()

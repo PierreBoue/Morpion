@@ -1,4 +1,4 @@
-package morpion.controller;
+package morpion.model;
 
 import morpion.model.BoardGame;
 import morpion.model.Cell;

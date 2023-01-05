@@ -1,14 +1,22 @@
 package morpion.model;
 
+import java.io.Serializable;
 import java.util.Scanner;
 // classe mère des joueurs de tout type
-public abstract class Player
+
+public abstract class Player implements Serializable
 {
+
     public char symbol;
     public Player( char symb )
     {
         symbol = symb;
     }
+
+    /**
+     * retourne un symbole en couleur
+     * @return
+     */
     public String getColoredSymbol()
     {
         String representation = " ";

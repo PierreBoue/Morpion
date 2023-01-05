@@ -1,6 +1,8 @@
 package morpion.model;
 
-public abstract class BoardGame // classe mère des plateaux de jeu
+import java.io.Serializable;
+
+public abstract class BoardGame implements Serializable// classe mère des plateaux de jeu
 {
     public Cell[][] plateau;
     public int size;
