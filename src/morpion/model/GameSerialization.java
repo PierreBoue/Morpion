@@ -10,6 +10,16 @@ public class GameSerialization implements Persistence{
     public GameSerialization(String filepath)
     {
         this.filepath = filepath;
+        File f = new File(filepath);
+        if ( ! f.exists() )
+        {
+            try {
+                f.createNewFile();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        // new FileOutputStream( filepath, true).close();
     }
 
     /**
@@ -90,8 +100,9 @@ public class GameSerialization implements Persistence{
     {
         FileOutputStream fileOutStream;
         try {
-            fileOutStream = new FileOutputStream( filepath);
-        } catch (FileNotFoundException e) {
+            fileOutStream = new  FileOutputStream( filepath);
+
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
         ObjectOutputStream playerOutStream;

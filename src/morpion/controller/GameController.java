@@ -36,6 +36,7 @@ public class GameController {
             {
                 case READY -> {
                     game = GameFactory.getGame();
+                   // persistence.writePlayer( game.players );
                     game.playgame();
                 }
                 case PLAYING -> {

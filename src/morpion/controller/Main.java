@@ -9,7 +9,8 @@ public class Main
     public static void main(String[] args)
     {
         GameController controller = new GameController();
-        Persistence persistence = new GameSerialization( "/c/Users/pierre.boue/Documents/classeur/Java/Morpion/morpionbu" );
+        ///c/Users/pierre.boue/Documents/classeur/Java/Morpion/morpionbu
+        Persistence persistence = new GameSerialization( "C:\\Users\\pierre.boue\\Documents\\classeur\\Java\\Morpion\\morpionbu" );
         controller.setPersistence(persistence);
         controller.run();
     }
