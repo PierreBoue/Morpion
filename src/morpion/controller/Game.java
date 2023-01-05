@@ -3,17 +3,31 @@ package morpion.controller;
 import morpion.model.BoardGame;
 import morpion.model.Cell;
 import morpion.model.Player;
-//import morpion.model.TicTacToeBoard;
 import morpion.view.ConsoleView;
 import morpion.view.InteractionUtilisateur;
 
 import java.io.Serializable;
-//import morpion.view.View;
 
+/**
+ * Mother abstract class of all game
+ */
 public abstract class Game implements Serializable {
+    /**
+     * players list
+     */
     protected Player[] players;
+    /**
+     * how many coordinates are requested to play ( depending of which game is played )
+     */
     protected int playDimension;
+    /**
+     * holds the board for one game
+     */
     public BoardGame board;
+
+    /**
+     * generic constructor
+     */
     public Game()
     {
         playDimension = 2;
@@ -26,6 +40,11 @@ public abstract class Game implements Serializable {
             players[i]= interaction.askForPlayer( i + 1 );
         }
     }
+
+    /**
+     * ask user to choose board size
+     * @return int board size
+     */
     protected int getBoardSize( )
     {
         InteractionUtilisateur interaction = new InteractionUtilisateur();
@@ -36,7 +55,16 @@ public abstract class Game implements Serializable {
         }
         return taille;
     }
+
+    /**
+     * creates a board with specified size
+     * @param size of the board
+     */
     protected abstract void setBoard( int size );
+
+    /**
+     * runs game main loop
+     */
     public void playgame()
     {
         display();// display empty board
@@ -52,7 +80,12 @@ public abstract class Game implements Serializable {
         }
 
     }
-    // ask the player passed as argument to play and updates board with player move
+
+
+    /**
+     * asks the player passed as argument to play and updates board with player move
+     * @param player
+     */
     public void setPlayerNewMove( Player player)
     {
         boolean ok = false;
@@ -78,7 +111,11 @@ public abstract class Game implements Serializable {
             }
         }
     }
-    public void display()// ask the view to display board
+
+    /**
+     *  ask the view to display board
+     */
+    public void display()
     {
         ConsoleView vue = new ConsoleView();
         vue.displayBoard(board.plateau);

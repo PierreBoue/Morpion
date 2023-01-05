@@ -2,6 +2,9 @@ package morpion.controller;
 
 import morpion.model.GomokuBoard;
 
+/**
+ * Gomoku Game subclass
+ */
 public class Gomoku extends Game {
     @Override
     protected void setBoard(int size) {

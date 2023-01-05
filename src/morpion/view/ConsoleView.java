@@ -3,6 +3,9 @@ package morpion.view;
 import morpion.model.Cell;
 import morpion.model.Player;
 
+/**
+ * generate output to console
+ */
 public class ConsoleView implements View
 {
     public void displayBoard( Cell[][] board )

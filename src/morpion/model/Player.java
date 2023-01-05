@@ -3,11 +3,18 @@ package morpion.model;
 import java.io.Serializable;
 import java.util.Scanner;
 // classe mère des joueurs de tout type
-
+/*
+* The abstract class to represent any player ( human and artificial )
+ */
 public abstract class Player implements Serializable
 {
 
     public char symbol;
+
+    /**
+     * constructor
+     * @param symb player char symbol
+     */
     public Player( char symb )
     {
         symbol = symb;
@@ -15,7 +22,7 @@ public abstract class Player implements Serializable
 
     /**
      * retourne un symbole en couleur
-     * @return
+     * @return colored representation of the player symbol for console display
      */
     public String getColoredSymbol()
     {
@@ -24,5 +31,12 @@ public abstract class Player implements Serializable
         if ( symbol == 'X') representation = "\033[1;32m" + symbol + "\033[0m";// vert
         return representation;
     }
+
+    /**
+     * make a player play
+     * @param board
+     * @param dimension how many coordinates does the player need to provide ( depending on which game )
+     * @return player's move coordinate as an int array
+     */
     public abstract int[]  play( BoardGame board, int dimension );
 }

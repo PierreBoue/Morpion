@@ -7,7 +7,7 @@ import java.io.*;
 public class GameSerialization implements Persistence{
 
     private final String filepath;
-    GameSerialization( String filepath )
+    public GameSerialization(String filepath)
     {
         this.filepath = filepath;
     }

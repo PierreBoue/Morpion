@@ -1,10 +1,31 @@
 package morpion.controller;
 
+import morpion.model.Persistence;
 import morpion.view.InteractionUtilisateur;
 
+/**
+ * Game State Machine
+ */
 public class GameController {
+    /**
+     * current game
+     */
     private Game game;
+    /**
+     * game state
+     */
     private GameState state  = GameState.NOSTATE;
+    /**
+     * object in charge of saving persitent state
+      */
+    private Persistence persistence;
+    public void setPersistence( Persistence persistence)
+    {
+        this.persistence = persistence;
+    }
+    /**
+     * iterates over the states
+     */
     public void run()
     {
         InteractionUtilisateur interaction = new InteractionUtilisateur();

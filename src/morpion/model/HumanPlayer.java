@@ -2,7 +2,9 @@ package morpion.model;
 
 import morpion.view.InteractionUtilisateur;
 
-//package morpion;
+/*
+* Human player class
+ */
 public class HumanPlayer extends Player {
     public HumanPlayer( char symb)
     {

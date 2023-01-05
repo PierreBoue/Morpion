@@ -5,16 +5,32 @@ import morpion.model.HumanPlayer;
 import morpion.model.Player;
 
 import java.util.Scanner;
-//package morpion;
+
+/**
+ * Utility to get user choices
+ */
 public class InteractionUtilisateur
 {
     private Scanner scanner;
-    private char nextPlayerSymbol; // contient le symbole du prochain joueur quand l'autre symbole a déjà été choisit
+    /**
+     * to hold next player symbol when the user already chose the other symbol for a first player
+     */
+    private char nextPlayerSymbol;
+
+    /**
+     * Constructor init the scanner
+     */
     public InteractionUtilisateur()
     {
         scanner = new Scanner(System.in);
         nextPlayerSymbol = '\0';
     }
+
+    /**
+     * Ask user for an integer answer
+     * @param message informative message ( question )
+     * @return int answered integer
+     */
     public int askForInt( String message)
     {
         ConsoleView vue = new ConsoleView();
@@ -33,6 +49,12 @@ public class InteractionUtilisateur
         }
         return reponse;
     }
+
+    /**
+     * Asks the user for a String
+     * @param message informative message ( question )
+     * @return
+     */
     public String askForString( String message )
     {
         ConsoleView vue = new ConsoleView();
@@ -52,6 +74,12 @@ public class InteractionUtilisateur
         }
         return reponse;
     }
+
+    /**
+     * Asks the user to provide info to get a new player
+     * @param playerindex player number to use before the player has a symbol or name
+     * @return Player instantiated as ordered by the user
+     */
     public Player askForPlayer(int playerindex )
     {
         ConsoleView vue = new ConsoleView();

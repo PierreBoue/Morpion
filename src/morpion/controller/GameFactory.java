@@ -2,7 +2,14 @@ package morpion.controller;
 
 import morpion.view.InteractionUtilisateur;
 
+/**
+ * Factory game builder returns a generic Game object from the chosen subclass
+ */
 public class GameFactory {
+    /**
+     * asks the player to choose a game tupe
+     * @return Game of the chosen type
+     */
     public static Game getGame()
     {
        int choix = 0;

@@ -5,8 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0af2408e-57f8-4f57-9679-46e3079f5579" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/morpion/controller/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/controller/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/morpion/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/controller/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/morpion/controller/GameFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/controller/GameFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/morpion/controller/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/controller/GameState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/morpion/controller/Gomoku.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/controller/Gomoku.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/morpion/controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/controller/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/morpion/model/BoardGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/model/BoardGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/morpion/model/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/model/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/morpion/model/GameSerialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/model/GameSerialization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/morpion/model/HumanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/model/HumanPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/morpion/model/Persistence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/model/Persistence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/morpion/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/model/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/morpion/view/ConsoleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/view/ConsoleView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/morpion/view/InteractionUtilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/view/InteractionUtilisateur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/morpion/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/view/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,11 +130,22 @@
       <workItem from="1672840292552" duration="770000" />
       <workItem from="1672844294533" duration="59000" />
       <workItem from="1672845088926" duration="1442000" />
-      <workItem from="1672905516663" duration="8753000" />
+      <workItem from="1672905516663" duration="19460000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/morpion/model/HumanPlayer.java</url>
+          <line>4</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
