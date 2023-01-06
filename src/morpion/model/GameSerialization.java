@@ -105,6 +105,7 @@ public class GameSerialization implements Persistence{
     @Override
     public void writePlayer(Player player)
     {
+        System.out.println("Saving player...");
         FileOutputStream fileOutStream;
         try {
             fileOutStream = new  FileOutputStream( filepath);

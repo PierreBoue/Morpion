@@ -6,15 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="0af2408e-57f8-4f57-9679-46e3079f5579" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.~lock.persistanceTicTacToe.ods#" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/morpionbu" beforeDir="false" afterPath="$PROJECT_DIR$/morpionbu" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/persistanceTicTacToe.ods" beforeDir="false" afterPath="$PROJECT_DIR$/persistanceTicTacToe.ods" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/morpion/controller/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/controller/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/morpion/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/morpion/controller/GameFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/controller/GameFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/morpion/model/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/model/Cell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/morpion/model/GameSerialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/model/GameSerialization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/morpion/model/Persistence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/model/Persistence.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +118,7 @@
       <workItem from="1672844294533" duration="59000" />
       <workItem from="1672845088926" duration="1442000" />
       <workItem from="1672905516663" duration="21547000" />
-      <workItem from="1672992179101" duration="3005000" />
+      <workItem from="1672992179101" duration="5204000" />
     </task>
     <servers />
   </component>

@@ -18,6 +18,10 @@ public abstract class Game implements Serializable {
      */
     protected Player[] players;
     /**
+     * index of the next player to play
+     */
+    private int currentPlayerIndex=0;
+    /**
      * how many coordinates are requested to play ( depending of which game is played )
      */
     protected int playDimension;
@@ -70,17 +74,18 @@ public abstract class Game implements Serializable {
     {
         display();// display empty board
         ConsoleView vue = new ConsoleView();
-        Player activePlayer = players[0];
+
         while ( ! board.isOver())
         { // main game loop
+            Player activePlayer = players[currentPlayerIndex];
             vue.printMessage("Player " + activePlayer.getColoredSymbol());
             setPlayerNewMove(activePlayer);
+            currentPlayerIndex = ( currentPlayerIndex == 0)?1:0;
             backup.writeGame(this);
-            if (activePlayer == players[0])
-                activePlayer = players[1];
-            else  activePlayer = players[0];
         }
-
+        board.initBoard();
+        currentPlayerIndex =0;
+        backup.writeGame(this);
     }
 
 
