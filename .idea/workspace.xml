@@ -6,9 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="0af2408e-57f8-4f57-9679-46e3079f5579" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/morpion/controller/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/morpion/controller/Main.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/morpionbu" beforeDir="false" afterPath="$PROJECT_DIR$/morpionbu" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/morpion/controller/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/controller/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Morpion/morpion/controller/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Morpion/morpion/model/ArtificialPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Morpion/morpion/model/ArtificialPlayer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Morpion/morpion/view/InteractionUtilisateur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Morpion/morpion/view/InteractionUtilisateur.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/morpion/controller/GameFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/controller/GameFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/morpion/controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/morpion/model/ArtificialPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/model/ArtificialPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/morpion/model/GameSerialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/model/GameSerialization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/morpion/model/Persistence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/model/Persistence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/morpion/view/InteractionUtilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/view/InteractionUtilisateur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/morpion/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/view/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,24 +50,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/pierre.boue/Documents/classeur/Java/Morpion/src/morpion&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/pierre.boue/Documents/classeur/Java/Morpion/src/morpion",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="morpion.view" />
@@ -66,7 +78,7 @@
   </component>
   <component name="RunManager" selected="Application.Morpion">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="morpion.controller.Main" />
+      <option name="MAIN_CLASS_NAME" value="morpion.Main" />
       <module name="Morpion" />
       <extension name="coverage">
         <pattern>
@@ -81,7 +93,7 @@
     <configuration name="Morpion" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="morpion.controller.Main" />
+      <option name="MAIN_CLASS_NAME" value="morpion.Main" />
       <module name="Morpion" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
       <method v="2">
@@ -118,7 +130,7 @@
       <workItem from="1672844294533" duration="59000" />
       <workItem from="1672845088926" duration="1442000" />
       <workItem from="1672905516663" duration="21547000" />
-      <workItem from="1672992179101" duration="5204000" />
+      <workItem from="1672992179101" duration="13186000" />
     </task>
     <servers />
   </component>

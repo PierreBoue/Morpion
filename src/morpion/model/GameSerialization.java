@@ -1,6 +1,7 @@
 package morpion.model;
 
 import morpion.controller.Game;
+import morpion.view.ConsoleView;
 
 import java.io.*;
 
@@ -34,29 +35,37 @@ public class GameSerialization implements Persistence{
      * @param game
      */
     @Override
-    public void writeGame(Game game) throws RuntimeException
+    public void writeGame(Game game)
     {
+        ConsoleView view = new ConsoleView();
         FileOutputStream fileOutStream;
         try {
             fileOutStream = new FileOutputStream( filepath);
         } catch (FileNotFoundException e) {
-             throw new RuntimeException(e);
+             //throw new RuntimeException(e);
+            view.printError("Unable to open file: " + filepath );
+             return;
         }
         ObjectOutputStream gameOutStream;
         try {
             gameOutStream = new ObjectOutputStream( fileOutStream);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            view.printError("unable to get Game stream");
+            return;
+           // throw new RuntimeException(e);
         }
         try {
             gameOutStream.writeObject(game);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            view.printError("unable to write file");
+            return;
+            //throw new RuntimeException(e);
         }
         try {
             gameOutStream.close();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            view.printError("unable to close file");
+           // throw new RuntimeException(e);
         }
     }
 
@@ -68,17 +77,22 @@ public class GameSerialization implements Persistence{
     @Override
     public Game readGame()
     {
+        ConsoleView view = new ConsoleView();
         FileInputStream fileInStream;
         try {
             fileInStream = new FileInputStream( filepath );
         } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+            view.printError("Unable to open file: " + filepath);
+            return null;
+            //throw new RuntimeException(e);
         }
         ObjectInputStream gameInputStream;
         try {
             gameInputStream = new ObjectInputStream(fileInStream);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            //throw new RuntimeException(e);
+            view.printError("unable to open file stream");
+            return null;
         }
         Game game;
         try {
@@ -86,12 +100,16 @@ public class GameSerialization implements Persistence{
         } catch (IOException e) {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
+            view.printError("Impossible to read input stream");
+            return null;
+            //throw new RuntimeException(e);
         }
         try {
             gameInputStream.close();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            view.printError("impossible to close input stream");
+            return null;
+            //throw new RuntimeException(e);
         }
         return game;
     }

@@ -16,7 +16,7 @@ public interface Persistence {
      * @param game to save
      * @throws RuntimeException
      */
-    public void  writeGame(Game game) throws RuntimeException;
+    public void  writeGame(Game game);
 
     /**
      * read game from file

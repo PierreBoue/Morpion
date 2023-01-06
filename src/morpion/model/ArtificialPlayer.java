@@ -1,6 +1,5 @@
 package morpion.model;
 
-import morpion.controller.Main;
 import morpion.view.ConsoleView;
 import org.jetbrains.annotations.NotNull;
 

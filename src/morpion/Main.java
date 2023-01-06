@@ -1,5 +1,6 @@
-package morpion.controller;
+package morpion;
 
+import morpion.controller.GameController;
 import morpion.model.GameSerialization;
 import morpion.model.Persistence;
 

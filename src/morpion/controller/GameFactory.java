@@ -1,6 +1,7 @@
 package morpion.controller;
 
 import morpion.model.Persistence;
+import morpion.view.ConsoleView;
 import morpion.view.InteractionUtilisateur;
 
 /**
@@ -42,6 +43,14 @@ public class GameFactory {
     }
     public static Game getGame(Persistence backup)
     {
-        return backup.readGame();
+
+        Game g = backup.readGame();
+       if ( g == null)
+       {
+           ConsoleView view = new ConsoleView();
+           view.printError("Impossible to get the saved game, a new game will be started instead");
+           g = getGame();
+       }
+        return g;
     }
 }

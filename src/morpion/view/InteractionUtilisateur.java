@@ -34,9 +34,9 @@ public class InteractionUtilisateur
     public int askForInt( String message)
     {
         ConsoleView vue = new ConsoleView();
-        int reponse = -1;
+        int reponse = Integer.MAX_VALUE;
         vue.printMessage(message);
-        while ( reponse < 0)
+        while ( reponse == Integer.MAX_VALUE)
         {
             try {
                 reponse = scanner.nextInt();
