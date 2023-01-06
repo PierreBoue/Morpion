@@ -1,5 +1,6 @@
 package morpion.controller;
 
+import morpion.model.Persistence;
 import morpion.view.InteractionUtilisateur;
 
 /**
@@ -38,5 +39,9 @@ public class GameFactory {
            }
        }
         return game;
+    }
+    public static Game getGame(Persistence backup)
+    {
+        return backup.readGame();
     }
 }

@@ -2,6 +2,7 @@ package morpion.controller;
 
 import morpion.model.BoardGame;
 import morpion.model.Cell;
+import morpion.model.Persistence;
 import morpion.model.Player;
 import morpion.view.ConsoleView;
 import morpion.view.InteractionUtilisateur;
@@ -65,7 +66,7 @@ public abstract class Game implements Serializable {
     /**
      * runs game main loop
      */
-    public void playgame()
+    public void playgame(Persistence backup)
     {
         display();// display empty board
         ConsoleView vue = new ConsoleView();
@@ -74,6 +75,7 @@ public abstract class Game implements Serializable {
         { // main game loop
             vue.printMessage("Player " + activePlayer.getColoredSymbol());
             setPlayerNewMove(activePlayer);
+            backup.writeGame(this);
             if (activePlayer == players[0])
                 activePlayer = players[1];
             else  activePlayer = players[0];

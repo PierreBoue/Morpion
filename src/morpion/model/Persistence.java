@@ -7,6 +7,11 @@ import morpion.controller.Game;
  */
 public interface Persistence {
     /**
+     * Wether or not a game was already saved
+     * @return true if yes false if no
+     */
+    public boolean hasSavedState();
+    /**
      * save game to file
      * @param game to save
      * @throws RuntimeException

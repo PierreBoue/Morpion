@@ -2,10 +2,12 @@ package morpion.model;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.io.Serializable;
+
 /**
  * board cell object
  */
-public class Cell {
+public class Cell implements Serializable {
 
     public int column;
     public int row;

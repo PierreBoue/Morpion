@@ -7,6 +7,7 @@ import java.io.*;
 public class GameSerialization implements Persistence{
 
     private final String filepath;
+    private boolean hasSavedState;
     public GameSerialization(String filepath)
     {
         this.filepath = filepath;
@@ -18,8 +19,14 @@ public class GameSerialization implements Persistence{
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-        }
+            hasSavedState = false;
+        } else  hasSavedState = true;
         // new FileOutputStream( filepath, true).close();
+    }
+
+    @Override
+    public boolean hasSavedState() {
+        return hasSavedState;
     }
 
     /**

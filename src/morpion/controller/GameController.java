@@ -35,9 +35,30 @@ public class GameController {
             switch (state.getState())
             {
                 case READY -> {
-                    game = GameFactory.getGame();
+                    if ( persistence.hasSavedState())
+                    {
+                        char repchar = '\0';
+                        while ( repchar == '\0')
+                        {
+                            String reputilisateur = interaction.askForString("You have a saved game, would you like to continue it ( c ), or start a new one ( n ) ?");
+                            if ( ! reputilisateur.isBlank())
+                            {
+                                repchar = reputilisateur.charAt(0);
+                                if ( repchar == 'c')
+                                {
+                                    game = GameFactory.getGame( persistence );
+                                } else if (repchar == 'n') {
+                                    game = GameFactory.getGame();
+                                } else repchar = '\0';
+                            }
+                        }
+
+                    } else {
+                        game = GameFactory.getGame();
+                    }
+
                    // persistence.writePlayer( game.players );
-                    game.playgame();
+                    game.playgame( persistence );
                 }
                 case PLAYING -> {
                     String reponse ="";
