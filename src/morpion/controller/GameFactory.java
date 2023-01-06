@@ -41,6 +41,12 @@ public class GameFactory {
        }
         return game;
     }
+
+    /**
+     * get a game from persistence file
+     * @param backup persistence object
+     * @return Game instantiated from file description
+     */
     public static Game getGame(Persistence backup)
     {
 

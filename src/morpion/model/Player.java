@@ -21,7 +21,7 @@ public abstract class Player implements Serializable
     }
 
     /**
-     * retourne un symbole en couleur
+     * returns a colored symbol
      * @return colored representation of the player symbol for console display
      */
     public String getColoredSymbol()
@@ -34,7 +34,7 @@ public abstract class Player implements Serializable
 
     /**
      * make a player play
-     * @param board
+     * @param board the board to play on
      * @param dimension how many coordinates does the player need to provide ( depending on which game )
      * @return player's move coordinate as an int array
      */

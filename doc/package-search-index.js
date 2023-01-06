@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"morpion.controller"},{"l":"morpion.model"},{"l":"morpion.view"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"morpion"},{"l":"morpion.controller"},{"l":"morpion.model"},{"l":"morpion.view"}];updateSearchResults();

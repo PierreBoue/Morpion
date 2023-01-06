@@ -32,7 +32,7 @@ public class GameSerialization implements Persistence{
 
     /**
      * enregistre le jeu passé en argument dans un fichier
-     * @param game
+     * @param game to save
      */
     @Override
     public void writeGame(Game game)
@@ -71,7 +71,7 @@ public class GameSerialization implements Persistence{
 
     /**
      * read a game from file
-     * @return game
+     * @return Game created from file data
      */
 
     @Override

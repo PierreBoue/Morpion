@@ -53,7 +53,7 @@ public class InteractionUtilisateur
     /**
      * Asks the user for a String
      * @param message informative message ( question )
-     * @return
+     * @return String user input
      */
     public String askForString( String message )
     {

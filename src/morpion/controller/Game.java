@@ -10,7 +10,7 @@ import morpion.view.InteractionUtilisateur;
 import java.io.Serializable;
 
 /**
- * Mother abstract class of all game
+ * Mother abstract class of all games
  */
 public abstract class Game implements Serializable {
     /**
@@ -22,7 +22,7 @@ public abstract class Game implements Serializable {
      */
     private int currentPlayerIndex=0;
     /**
-     * how many coordinates are requested to play ( depending of which game is played )
+     * how many coordinates are requested to play ( depending on which game is played )
      */
     protected int playDimension;
     /**
@@ -91,7 +91,7 @@ public abstract class Game implements Serializable {
 
     /**
      * asks the player passed as argument to play and updates board with player move
-     * @param player
+     * @param player the player to play
      */
     public void setPlayerNewMove( Player player)
     {
