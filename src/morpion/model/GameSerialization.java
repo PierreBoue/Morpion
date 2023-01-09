@@ -11,6 +11,7 @@ public class GameSerialization implements Persistence{
     private boolean hasSavedState;
     public GameSerialization(String filepath)
     {
+       ConsoleView vue = new ConsoleView();
         this.filepath = filepath;
         File f = new File(filepath);
         if ( ! f.exists() )
@@ -18,7 +19,9 @@ public class GameSerialization implements Persistence{
             try {
                 f.createNewFile();
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                vue.printError("File " + filepath + " cannot be created");
+                return;
+                //throw new RuntimeException(e);
             }
             hasSavedState = false;
         } else  hasSavedState = true;

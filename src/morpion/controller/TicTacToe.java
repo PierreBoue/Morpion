@@ -4,13 +4,14 @@ import morpion.model.Cell;
 import morpion.model.Player;
 import morpion.model.TicTacToeBoard;
 import morpion.view.ConsoleView;
+import morpion.view.InteractionUtilisateur;
 
 //package morpion;
 public class TicTacToe extends Game
 {
-    public TicTacToe()
+    public TicTacToe(InteractionUtilisateur interaction)
     {
-        super();
+        super( interaction );
     }
     @Override
     protected void setBoard(int size)

@@ -8,10 +8,17 @@ import morpion.view.InteractionUtilisateur;
  * Factory game builder returns a generic Game object from the chosen subclass
  */
 public class GameFactory {
+    public static Game getGame( GameChoice choice, InteractionUtilisateur interaction )
+    {
+
+        return choice.newgame( interaction );
+    }
+
     /**
      * asks the player to choose a game tupe
      * @return Game of the chosen type
      */
+    /*
     public static Game getGame()
     {
        int choix = 0;
@@ -41,13 +48,13 @@ public class GameFactory {
        }
         return game;
     }
-
+    */
     /**
      * get a game from persistence file
      * @param backup persistence object
      * @return Game instantiated from file description
      */
-    public static Game getGame(Persistence backup)
+    public static Game getGame(Persistence backup, InteractionUtilisateur interaction)
     {
 
         Game g = backup.readGame();
@@ -55,7 +62,7 @@ public class GameFactory {
        {
            ConsoleView view = new ConsoleView();
            view.printError("Impossible to get the saved game, a new game will be started instead");
-           g = getGame();
+           g = getGame(GameChoice.TICTACTOE, interaction);
        }
         return g;
     }

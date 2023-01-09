@@ -1,6 +1,7 @@
 package morpion.controller;
 
 import morpion.model.Persistence;
+import morpion.view.ConsoleView;
 import morpion.view.InteractionUtilisateur;
 
 /**
@@ -19,16 +20,24 @@ public class GameController {
      * object in charge of saving persitent state
       */
     private Persistence persistence;
+    private InteractionUtilisateur interaction;
+    private ConsoleView view;
+    public GameController()
+    {
+        view = new ConsoleView();
+        interaction = new InteractionUtilisateur();
+    }
     public void setPersistence( Persistence persistence)
     {
         this.persistence = persistence;
+        interaction = new InteractionUtilisateur();
     }
     /**
      * iterates over the states
      */
     public void run()
     {
-        InteractionUtilisateur interaction = new InteractionUtilisateur();
+       // InteractionUtilisateur interaction =
         while ( state.getState() != GameState.FINISH )
         {
             state.nextState();
@@ -46,15 +55,24 @@ public class GameController {
                                 repchar = reputilisateur.charAt(0);
                                 if ( repchar == 'c')
                                 {
-                                    game = GameFactory.getGame( persistence );
+                                    game = GameFactory.getGame( persistence, interaction );
+                                    if ( game == null )
+                                    {
+                                        GameChoice choice = interaction.askForGame();
+                                        game = GameFactory.getGame( choice, interaction );
+                                    }
                                 } else if (repchar == 'n') {
-                                    game = GameFactory.getGame();
+                                    GameChoice choice = interaction.askForGame();
+                                    game = GameFactory.getGame( choice, interaction );
+                                    System.out.println(game.getClass().getName());
                                 } else repchar = '\0';
                             }
                         }
 
                     } else {
-                        game = GameFactory.getGame();
+                        GameChoice gc = interaction.askForGame();
+                        game = GameFactory.getGame( gc, interaction );
+
                     }
 
                    // persistence.writePlayer( game.players );

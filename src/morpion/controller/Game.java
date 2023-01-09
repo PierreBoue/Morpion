@@ -33,10 +33,10 @@ public abstract class Game implements Serializable {
     /**
      * generic constructor
      */
-    public Game()
+    public Game( InteractionUtilisateur  interaction )
     {
         playDimension = 2;
-        InteractionUtilisateur interaction = new InteractionUtilisateur();
+        //InteractionUtilisateur interaction = new InteractionUtilisateur();
         int size = getBoardSize();
         setBoard( size );
         players = new Player[2];

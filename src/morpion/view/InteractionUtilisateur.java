@@ -1,5 +1,6 @@
 package morpion.view;
 
+import morpion.controller.GameChoice;
 import morpion.model.ArtificialPlayer;
 import morpion.model.HumanPlayer;
 import morpion.model.Player;
@@ -12,6 +13,7 @@ import java.util.Scanner;
 public class InteractionUtilisateur
 {
     private Scanner scanner;
+    View vue;
     /**
      * to hold next player symbol when the user already chose the other symbol for a first player
      */
@@ -24,8 +26,28 @@ public class InteractionUtilisateur
     {
         scanner = new Scanner(System.in);
         nextPlayerSymbol = '\0';
+        vue = new ConsoleView();
     }
-
+    public GameChoice askForGame()
+    {
+        String question = "";
+        int c =1;
+        for ( GameChoice gc:GameChoice.values())
+        {
+            question += c++ + " - " + gc.humanReadableValue + "\n";
+        }
+        c--;
+       // vue.printMessage(question);
+        boolean ok = false;
+        int reponse =0;
+        while ( ! ok )
+        {
+            reponse = askForInt( question);
+            ok = ((reponse >0) && ( reponse <= c));
+            if ( ! ok ) vue.printError("Your answer should, be between 1 and " + c);
+        }
+        return GameChoice.values()[reponse -1];
+    }
     /**
      * Ask user for an integer answer
      * @param message informative message ( question )
@@ -33,7 +55,7 @@ public class InteractionUtilisateur
      */
     public int askForInt( String message)
     {
-        ConsoleView vue = new ConsoleView();
+        //ConsoleView vue = new ConsoleView();
         int reponse = Integer.MAX_VALUE;
         vue.printMessage(message);
         while ( reponse == Integer.MAX_VALUE)
@@ -57,7 +79,7 @@ public class InteractionUtilisateur
      */
     public String askForString( String message )
     {
-        ConsoleView vue = new ConsoleView();
+        //ConsoleView vue = new ConsoleView();
         String reponse = null;
         vue.printMessage(message);
 

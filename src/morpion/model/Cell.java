@@ -51,7 +51,7 @@ public class Cell implements Serializable {
      * @param cell to compare to this cell
      * @return a signed int as the result of comparison
      */
-    int compareCell(@NotNull Cell cell ) // fonction pour le classement des cellules
+    public int compareCell(@NotNull Cell cell ) // fonction pour le classement des cellules
     {
         int sens =cell.favorable - this.favorable;
         return sens;

@@ -12,7 +12,7 @@ interface View
      * displays the board on screen
      * @param board
      */
-    void displayBoard( Cell[][] board );
+    public void displayBoard( Cell[][] board );
 
     /**
      * displays the player id

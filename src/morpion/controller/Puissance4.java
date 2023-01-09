@@ -1,11 +1,12 @@
 package morpion.controller;
 
 import morpion.model.Puissance4Board;
+import morpion.view.InteractionUtilisateur;
 
 public class Puissance4 extends Game {
-    public Puissance4()
+    public Puissance4(InteractionUtilisateur interaction)
     {
-        super();
+        super(interaction);
         playDimension = 1;
     }
     @Override
