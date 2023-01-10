@@ -1,6 +1,7 @@
 package morpion.model;
 
 import morpion.view.ConsoleView;
+import morpion.view.InteractionUtilisateur;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -11,7 +12,7 @@ public class ArtificialPlayer extends Player {
         super(symb);
     }
     @Override
-    public int[] play( BoardGame board, int dimension) //jeux automatique
+    public int[] play(BoardGame board, int dimension, InteractionUtilisateur interaction ) //jeux automatique
     {
         int[] coordonnees = {-1,-1};
         Cell[][] plateau = board.plateau; ;

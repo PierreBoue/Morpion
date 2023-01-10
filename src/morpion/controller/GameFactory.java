@@ -3,15 +3,17 @@ package morpion.controller;
 import morpion.model.Persistence;
 import morpion.view.ConsoleView;
 import morpion.view.InteractionUtilisateur;
+import morpion.view.View;
+
 
 /**
  * Factory game builder returns a generic Game object from the chosen subclass
  */
 public class GameFactory {
-    public static Game getGame( GameChoice choice, InteractionUtilisateur interaction )
+    public static Game getGame( GameChoice choice, InteractionUtilisateur interaction, View vue )
     {
 
-        return choice.newgame( interaction );
+        return choice.newgame( interaction, vue );
     }
 
     /**
@@ -54,7 +56,7 @@ public class GameFactory {
      * @param backup persistence object
      * @return Game instantiated from file description
      */
-    public static Game getGame(Persistence backup, InteractionUtilisateur interaction)
+    public static Game getGame(Persistence backup, InteractionUtilisateur interaction, View vue)
     {
 
         Game g = backup.readGame();
@@ -62,7 +64,7 @@ public class GameFactory {
        {
            ConsoleView view = new ConsoleView();
            view.printError("Impossible to get the saved game, a new game will be started instead");
-           g = getGame(GameChoice.TICTACTOE, interaction);
+           g = getGame(GameChoice.TICTACTOE, interaction, vue);
        }
         return g;
     }

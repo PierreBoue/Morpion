@@ -6,6 +6,7 @@ import morpion.model.Persistence;
 import morpion.model.Player;
 import morpion.view.ConsoleView;
 import morpion.view.InteractionUtilisateur;
+import morpion.view.View;
 
 import java.io.Serializable;
 
@@ -30,12 +31,16 @@ public abstract class Game implements Serializable {
      */
     public BoardGame board;
 
+    private InteractionUtilisateur interaction;
+    private View vue;
+
     /**
      * generic constructor
      */
-    public Game( InteractionUtilisateur  interaction )
+    public Game(InteractionUtilisateur  interaction, View vue )
     {
         playDimension = 2;
+        interaction = interaction;
         //InteractionUtilisateur interaction = new InteractionUtilisateur();
         int size = getBoardSize();
         setBoard( size );
@@ -52,7 +57,7 @@ public abstract class Game implements Serializable {
      */
     protected int getBoardSize( )
     {
-        InteractionUtilisateur interaction = new InteractionUtilisateur();
+
         int taille=0;
         while ((taille < 3) || ( taille > 99 ))
         {
@@ -75,7 +80,7 @@ public abstract class Game implements Serializable {
         display();// display empty board
         ConsoleView vue = new ConsoleView();
 
-        while ( ! board.isOver())
+        while ( ! board.isOver( vue))
         { // main game loop
             Player activePlayer = players[currentPlayerIndex];
             vue.printMessage("Player " + activePlayer.getColoredSymbol());
@@ -102,7 +107,7 @@ public abstract class Game implements Serializable {
         int i=0;
         while (! ok )
         {
-            coordinates = player.play( board, playDimension ); //get player move
+            coordinates = player.play( board, playDimension, interaction ); //get player move
             if (( coordinates[0] < 0 ) || ( coordinates[0] >= board.size )) // checks validity of player move
             {
                 vue.printError("Column number should be between 0 and " + ( board.size - 1));

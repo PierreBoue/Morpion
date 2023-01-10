@@ -1,5 +1,7 @@
 package morpion.model;
 
+import morpion.view.InteractionUtilisateur;
+
 import java.io.Serializable;
 import java.util.Scanner;
 // classe mère des joueurs de tout type
@@ -38,5 +40,5 @@ public abstract class Player implements Serializable
      * @param dimension how many coordinates does the player need to provide ( depending on which game )
      * @return player's move coordinate as an int array
      */
-    public abstract int[]  play( BoardGame board, int dimension );
+    public abstract int[]  play(BoardGame board, int dimension, InteractionUtilisateur interaction);
 }

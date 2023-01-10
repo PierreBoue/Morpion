@@ -3,6 +3,8 @@ package morpion.controller;
 import morpion.model.Persistence;
 import morpion.view.ConsoleView;
 import morpion.view.InteractionUtilisateur;
+import morpion.view.View;
+
 
 /**
  * Game State Machine
@@ -21,23 +23,25 @@ public class GameController {
       */
     private Persistence persistence;
     private InteractionUtilisateur interaction;
-    private ConsoleView view;
+    private View vue;
+    //private View vue;
+//    private ConsoleView vue;
     public GameController()
     {
-        view = new ConsoleView();
         interaction = new InteractionUtilisateur();
+        vue = new ConsoleView();
     }
     public void setPersistence( Persistence persistence)
     {
         this.persistence = persistence;
-        interaction = new InteractionUtilisateur();
+
     }
     /**
      * iterates over the states
      */
     public void run()
     {
-       // InteractionUtilisateur interaction =
+
         while ( state.getState() != GameState.FINISH )
         {
             state.nextState();

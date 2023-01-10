@@ -6,7 +6,7 @@ import morpion.model.Player;
 /**
  * generic view
  */
-interface View
+public interface View
 {
     /**
      * displays the board on screen

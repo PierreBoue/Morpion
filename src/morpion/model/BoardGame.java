@@ -1,5 +1,6 @@
 package morpion.model;
 
+import javax.swing.text.View;
 import java.io.Serializable;
 
 /**
@@ -38,7 +39,7 @@ public abstract class BoardGame implements Serializable// classe mère des plate
      * check if someone has won or if the board is completed
      * @return false if the game continues, true if someone won or the board is full
      */
-    public abstract boolean isOver();
+    public abstract boolean isOver(View vue);
 
     /**
      * reset to 0 every cell favorable parameter
