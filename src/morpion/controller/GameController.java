@@ -59,15 +59,15 @@ public class GameController {
                                 repchar = reputilisateur.charAt(0);
                                 if ( repchar == 'c')
                                 {
-                                    game = GameFactory.getGame( persistence, interaction );
+                                    game = GameFactory.getGame( persistence, interaction, vue );
                                     if ( game == null )
                                     {
                                         GameChoice choice = interaction.askForGame();
-                                        game = GameFactory.getGame( choice, interaction );
+                                        game = GameFactory.getGame( choice, interaction, vue );
                                     }
                                 } else if (repchar == 'n') {
                                     GameChoice choice = interaction.askForGame();
-                                    game = GameFactory.getGame( choice, interaction );
+                                    game = GameFactory.getGame( choice, interaction, vue );
                                     System.out.println(game.getClass().getName());
                                 } else repchar = '\0';
                             }
@@ -75,7 +75,7 @@ public class GameController {
 
                     } else {
                         GameChoice gc = interaction.askForGame();
-                        game = GameFactory.getGame( gc, interaction );
+                        game = GameFactory.getGame( gc, interaction, vue );
 
                     }
 

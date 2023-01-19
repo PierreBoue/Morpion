@@ -2,7 +2,7 @@ package morpion.model;
 
 import morpion.view.ConsoleView;
 import morpion.view.InteractionUtilisateur;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.*;
 
 import java.util.ArrayList;
 public class ArtificialPlayer extends Player {

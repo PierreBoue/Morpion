@@ -1,8 +1,8 @@
 package morpion.model;
 
-import javax.swing.text.View;
+//import javax.swing.text.View;
 import java.io.Serializable;
-
+import morpion.view.*;
 /**
  * Abstract class to represent the board of any game
  */

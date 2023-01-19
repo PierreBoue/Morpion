@@ -13,7 +13,7 @@ public class GameFactory {
     public static Game getGame( GameChoice choice, InteractionUtilisateur interaction, View vue )
     {
 
-        return choice.newgame( interaction, vue );
+        return choice.newgame( interaction);
     }
 
     /**
