@@ -124,6 +124,11 @@ public class GameSerialization implements Persistence {
             return null;
             //throw new RuntimeException(e);
         }
+        if ( game != null )
+        {
+            game.setVue(vue);
+            game.setInteraction(interactionUtilisateur);
+        }
         return game;
     }
 

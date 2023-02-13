@@ -83,12 +83,15 @@ public class GameController {
                 }
                 case PLAYING -> {
                     String reponse ="";
+                    int y=0;
                     while ( reponse.isBlank())
                     {
                         reponse = interaction.askForString("Would you like to play a new game? (Y/N)");
+                        y++;
                     }
+                    state.endState();
                     reponse = reponse.toUpperCase();
-                    if (reponse.charAt(0) == 'Y') state.startState(); else state.nextState();
+                    if (reponse.charAt(0) == 'Y') state.startState();
 
                 }
                 case FINISH -> {

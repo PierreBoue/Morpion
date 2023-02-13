@@ -41,6 +41,7 @@ public abstract class Game implements Serializable {
     {
         playDimension = 2;
         this.interaction = interaction;
+        this.vue = vue;
         //InteractionUtilisateur interaction = new InteractionUtilisateur();
         int size = getBoardSize();
         setBoard( size );
@@ -111,7 +112,7 @@ public abstract class Game implements Serializable {
     public void setPlayerNewMove( Player player)
     {
         boolean ok = false;
-        ConsoleView vue = new ConsoleView();
+        //ConsoleView vue = new ConsoleView();
         int[] coordinates = {-1,-1};
         Cell[][] plateau = board.plateau;
         int i=0;
@@ -141,5 +142,13 @@ public abstract class Game implements Serializable {
     {
         //ConsoleView vue = new ConsoleView();
         vue.displayBoard(board.plateau);
+    }
+    public void setVue(View view)
+    {
+        this.vue = view;
+    }
+    public void setInteraction( InteractionUtilisateur intu)
+    {
+        this.interaction = intu;
     }
 }
