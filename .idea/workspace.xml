@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0af2408e-57f8-4f57-9679-46e3079f5579" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Morpion.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Morpion.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/morpion/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/morpion/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/morpion/controller/GameFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/controller/GameFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/morpion/controller/Gomoku.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/controller/Gomoku.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/morpion/model/ArtificialPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/model/ArtificialPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/morpion/model/BoardGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/model/BoardGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/morpion/model/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/model/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/morpion/model/GomokuBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/model/GomokuBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/morpion/model/Puissance4Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/model/Puissance4Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/morpion/model/TicTacToeBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/model/TicTacToeBoard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +39,7 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
@@ -57,7 +53,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/pierre.boue/Documents/classeur/Morpion",
+    "last_opened_file_path": "/home/pierre/Documents/classeur/Morpion",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -90,7 +86,6 @@
     </configuration>
     <configuration name="Morpion" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="morpion.Main" />
       <module name="Morpion" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
@@ -131,6 +126,7 @@
       <workItem from="1672992179101" duration="15041000" />
       <workItem from="1673251025293" duration="21246000" />
       <workItem from="1674117479965" duration="1506000" />
+      <workItem from="1676290583245" duration="556000" />
     </task>
     <servers />
   </component>
