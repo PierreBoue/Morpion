@@ -1,6 +1,5 @@
 package morpion.controller;
 
-import morpion.model.Persistence;
 import morpion.view.ConsoleView;
 import morpion.view.InteractionUtilisateur;
 import morpion.view.View;
@@ -13,7 +12,7 @@ public class GameFactory {
     public static Game getGame( GameChoice choice, InteractionUtilisateur interaction, View vue )
     {
 
-        return choice.newgame( interaction);
+        return choice.newgame( interaction, vue);
     }
 
     /**
@@ -62,8 +61,8 @@ public class GameFactory {
         Game g = backup.readGame();
        if ( g == null)
        {
-           ConsoleView view = new ConsoleView();
-           view.printError("Impossible to get the saved game, a new game will be started instead");
+           //ConsoleView view = new ConsoleView();
+           vue.printError("Impossible to get the saved game, a new game will be started instead");
            g = getGame(GameChoice.TICTACTOE, interaction, vue);
        }
         return g;

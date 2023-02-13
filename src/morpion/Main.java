@@ -1,17 +1,21 @@
 package morpion;
 
 import morpion.controller.GameController;
-import morpion.model.GameSerialization;
-import morpion.model.Persistence;
+import morpion.controller.GameSerialization;
+import morpion.controller.Persistence;
+import morpion.view.ConsoleView;
+import morpion.view.InteractionUtilisateur;
+import morpion.view.View;
 
-//import morpion.controller.TicTacToe;
 public class Main
 {
     public static void main(String[] args)
     {
-        GameController controller = new GameController();
-
-        Persistence persistence = new GameSerialization( "C:\\Users\\pierre.boue\\Documents\\classeur\\Java\\Morpion\\morpionbu" );
+        View vue = new ConsoleView();
+        InteractionUtilisateur interactionU = new InteractionUtilisateur();
+        GameController controller = new GameController( vue, interactionU );
+        String fpath = GameSerialization.getPersistenceFilePath();
+        Persistence persistence = new GameSerialization( fpath, vue, interactionU );
         controller.setPersistence(persistence);
         controller.run();
     }

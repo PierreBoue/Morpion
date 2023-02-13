@@ -2,7 +2,6 @@ package morpion.controller;
 
 import morpion.model.BoardGame;
 import morpion.model.Cell;
-import morpion.model.Persistence;
 import morpion.model.Player;
 import morpion.view.ConsoleView;
 import morpion.view.InteractionUtilisateur;
@@ -30,9 +29,10 @@ public abstract class Game implements Serializable {
      * holds the board for one game
      */
     public BoardGame board;
-
-    private InteractionUtilisateur interaction;
-    private View vue;
+    //@Transient
+    private transient InteractionUtilisateur interaction;
+    //@Transient
+    private transient View vue;
 
     /**
      * generic constructor
@@ -40,14 +40,24 @@ public abstract class Game implements Serializable {
     public Game(InteractionUtilisateur  interaction, View vue )
     {
         playDimension = 2;
-        interaction = interaction;
+        this.interaction = interaction;
         //InteractionUtilisateur interaction = new InteractionUtilisateur();
         int size = getBoardSize();
         setBoard( size );
         players = new Player[2];
+        if ( interaction == null)
+        {
+            System.err.println("Interaction nulle");
+            return;
+        }
+        if (vue == null)
+        {
+            System.err.println("view is null");
+            return;
+        }
         for (int i=0; i<2; i++)
         {
-            players[i]= interaction.askForPlayer( i + 1 );
+            players[i]= this.interaction.askForPlayer( i + 1 );
         }
     }
 
@@ -78,7 +88,7 @@ public abstract class Game implements Serializable {
     public void playgame(Persistence backup)
     {
         display();// display empty board
-        ConsoleView vue = new ConsoleView();
+        //ConsoleView vue = new ConsoleView();
 
         while ( ! board.isOver( vue))
         { // main game loop
@@ -129,7 +139,7 @@ public abstract class Game implements Serializable {
      */
     public void display()
     {
-        ConsoleView vue = new ConsoleView();
+        //ConsoleView vue = new ConsoleView();
         vue.displayBoard(board.plateau);
     }
 }

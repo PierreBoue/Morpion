@@ -1,6 +1,5 @@
 package morpion.controller;
 
-import morpion.model.Persistence;
 import morpion.view.ConsoleView;
 import morpion.view.InteractionUtilisateur;
 import morpion.view.View;
@@ -26,10 +25,10 @@ public class GameController {
     private View vue;
     //private View vue;
 //    private ConsoleView vue;
-    public GameController()
+    public GameController( View view, InteractionUtilisateur interu)
     {
-        interaction = new InteractionUtilisateur();
-        vue = new ConsoleView();
+        this.interaction = interu;
+        this.vue = view;
     }
     public void setPersistence( Persistence persistence)
     {

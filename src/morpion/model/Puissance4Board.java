@@ -1,8 +1,7 @@
 package morpion.model;
 
 import morpion.model.BoardGame;
-
-import javax.swing.text.View;
+import morpion.view.View;
 
 public class Puissance4Board extends BoardGame {
     public Puissance4Board(int taille) {

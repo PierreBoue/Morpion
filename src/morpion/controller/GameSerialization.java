@@ -1,17 +1,27 @@
-package morpion.model;
+package morpion.controller;
 
-import morpion.controller.Game;
+import morpion.model.BoardGame;
+import morpion.model.Cell;
+import morpion.model.Player;
 import morpion.view.ConsoleView;
+import morpion.view.InteractionUtilisateur;
+import morpion.view.View;
 
 import java.io.*;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
-public class GameSerialization implements Persistence{
+public class GameSerialization implements Persistence {
 
     private final String filepath;
     private boolean hasSavedState;
-    public GameSerialization(String filepath)
+
+    View vue;
+    InteractionUtilisateur interactionUtilisateur;
+    public GameSerialization(String filepath, View v, InteractionUtilisateur i)
     {
-       ConsoleView vue = new ConsoleView();
+       this.vue =v;
+       this.interactionUtilisateur = i;
         this.filepath = filepath;
         File f = new File(filepath);
         if ( ! f.exists() )
@@ -19,7 +29,7 @@ public class GameSerialization implements Persistence{
             try {
                 f.createNewFile();
             } catch (IOException e) {
-                vue.printError("File " + filepath + " cannot be created");
+                this.vue.printError("File " + filepath + " cannot be created");
                 return;
                 //throw new RuntimeException(e);
             }
@@ -40,34 +50,34 @@ public class GameSerialization implements Persistence{
     @Override
     public void writeGame(Game game)
     {
-        ConsoleView view = new ConsoleView();
+
         FileOutputStream fileOutStream;
         try {
             fileOutStream = new FileOutputStream( filepath);
         } catch (FileNotFoundException e) {
              //throw new RuntimeException(e);
-            view.printError("Unable to open file: " + filepath );
+            vue.printError("Unable to open file: " + filepath );
              return;
         }
         ObjectOutputStream gameOutStream;
         try {
             gameOutStream = new ObjectOutputStream( fileOutStream);
         } catch (IOException e) {
-            view.printError("unable to get Game stream");
+            vue.printError("unable to get Game stream");
             return;
            // throw new RuntimeException(e);
         }
         try {
             gameOutStream.writeObject(game);
         } catch (IOException e) {
-            view.printError("unable to write file");
+            vue.printError("unable to write file");
             return;
             //throw new RuntimeException(e);
         }
         try {
             gameOutStream.close();
         } catch (IOException e) {
-            view.printError("unable to close file");
+            vue.printError("unable to close file");
            // throw new RuntimeException(e);
         }
     }
@@ -80,12 +90,12 @@ public class GameSerialization implements Persistence{
     @Override
     public Game readGame()
     {
-        ConsoleView view = new ConsoleView();
+
         FileInputStream fileInStream;
         try {
             fileInStream = new FileInputStream( filepath );
         } catch (FileNotFoundException e) {
-            view.printError("Unable to open file: " + filepath);
+            vue.printError("Unable to open file: " + filepath);
             return null;
             //throw new RuntimeException(e);
         }
@@ -94,7 +104,7 @@ public class GameSerialization implements Persistence{
             gameInputStream = new ObjectInputStream(fileInStream);
         } catch (IOException e) {
             //throw new RuntimeException(e);
-            view.printError("unable to open file stream");
+            vue.printError("unable to open file stream");
             return null;
         }
         Game game;
@@ -103,14 +113,14 @@ public class GameSerialization implements Persistence{
         } catch (IOException e) {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {
-            view.printError("Impossible to read input stream");
+            vue.printError("Impossible to read input stream");
             return null;
             //throw new RuntimeException(e);
         }
         try {
             gameInputStream.close();
         } catch (IOException e) {
-            view.printError("impossible to close input stream");
+            vue.printError("impossible to close input stream");
             return null;
             //throw new RuntimeException(e);
         }
@@ -315,6 +325,16 @@ public class GameSerialization implements Persistence{
             throw new RuntimeException(e);
         }
         return cell;
+    }
+    public static final String getPersistenceFilePath()
+    {
+        Path path = Paths.get("").toAbsolutePath();
+        while (!path.endsWith("Morpion")) {
+            path = path.getParent();
+            if ( path == null) return null;
+        }
+        path = Path.of(String.valueOf(path), "morpionbu");
+        return path.toString();
     }
 
     @Override

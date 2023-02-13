@@ -1,6 +1,7 @@
 package morpion.controller;
 
 import morpion.view.InteractionUtilisateur;
+import morpion.view.View;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -16,9 +17,9 @@ public enum GameChoice {
         gameclass = gamecl;
     }
 
-    public Game newgame(InteractionUtilisateur interaction) {
+    public Game newgame(InteractionUtilisateur interaction, View vue) {
         try {
-            Game game = (Game) gameclass.getDeclaredConstructor(InteractionUtilisateur.class).newInstance(interaction);//(gameclass)::new gameclass();// (Game) gameclass();
+            Game game = (Game) gameclass.getDeclaredConstructor(InteractionUtilisateur.class, View.class).newInstance(interaction, vue);//(gameclass)::new gameclass();// (Game) gameclass();
             return game;
         } catch (InstantiationException e) {
             System.err.println("Run Time Exception calling constructor");

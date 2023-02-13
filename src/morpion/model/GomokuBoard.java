@@ -3,6 +3,7 @@ package morpion.model;
 import morpion.model.BoardGame;
 import morpion.model.Cell;
 import morpion.view.ConsoleView;
+import morpion.view.View;
 //import morpion.view.View;
 
 public class GomokuBoard extends BoardGame {
@@ -11,8 +12,8 @@ public class GomokuBoard extends BoardGame {
     }
 
     @Override
-    public boolean isOver() { // verif gagnant
-        ConsoleView vue = new ConsoleView();
+    public boolean isOver(View vue) { // verif gagnant
+        //ConsoleView vue = new ConsoleView();
         int nbrevide=0;
         int nbrealign=0;
         final  int WINnbreALIGN = 5;

@@ -1,6 +1,9 @@
-package morpion.model;
+package morpion.controller;
 
 import morpion.controller.Game;
+import morpion.model.BoardGame;
+import morpion.model.Cell;
+import morpion.model.Player;
 
 /**
  * generic interface for persistence whatever persistence type is used
