@@ -42,7 +42,7 @@ public abstract class Game implements Serializable {
         playDimension = 2;
         this.interaction = interaction;
         this.vue = vue;
-        //InteractionUtilisateur interaction = new InteractionUtilisateur();
+
         int size = getBoardSize();
         setBoard( size );
         players = new Player[2];
@@ -89,7 +89,6 @@ public abstract class Game implements Serializable {
     public void playgame(Persistence backup)
     {
         display();// display empty board
-        //ConsoleView vue = new ConsoleView();
 
         while ( ! board.isOver( vue))
         { // main game loop
@@ -112,13 +111,12 @@ public abstract class Game implements Serializable {
     public void setPlayerNewMove( Player player)
     {
         boolean ok = false;
-        //ConsoleView vue = new ConsoleView();
         int[] coordinates = {-1,-1};
         Cell[][] plateau = board.plateau;
         int i=0;
         while (! ok )
         {
-            coordinates = player.play( board, playDimension, interaction ); //get player move
+            coordinates = player.play( board, playDimension, vue, interaction ); //get player move
             if (( coordinates[0] < 0 ) || ( coordinates[0] >= board.size )) // checks validity of player move
             {
                 vue.printError("Column number should be between 0 and " + ( board.size - 1));
@@ -140,8 +138,7 @@ public abstract class Game implements Serializable {
      */
     public void display()
     {
-        //ConsoleView vue = new ConsoleView();
-        vue.displayBoard(board.plateau);
+         vue.displayBoard(board.plateau);
     }
     public void setVue(View view)
     {

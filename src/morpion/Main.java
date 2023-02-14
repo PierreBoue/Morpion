@@ -12,7 +12,7 @@ public class Main
     public static void main(String[] args)
     {
         View vue = new ConsoleView();
-        InteractionUtilisateur interactionU = new InteractionUtilisateur();
+        InteractionUtilisateur interactionU = new InteractionUtilisateur(vue);
         GameController controller = new GameController( vue, interactionU );
         String fpath = GameSerialization.getPersistenceFilePath();
         Persistence persistence = new GameSerialization( fpath, vue, interactionU );

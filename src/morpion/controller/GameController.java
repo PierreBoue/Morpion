@@ -40,14 +40,14 @@ public class GameController {
      */
     public void run()
     {
-
+        boolean playedAlready=false;
         while ( state.getState() != GameState.FINISH )
         {
             state.nextState();
             switch (state.getState())
             {
                 case READY -> {
-                    if ( persistence.hasSavedState())
+                    if (( persistence.hasSavedState()) && ( ! playedAlready ))
                     {
                         char repchar = '\0';
                         while ( repchar == '\0')
@@ -90,6 +90,7 @@ public class GameController {
                         y++;
                     }
                     state.endState();
+                    playedAlready = true;
                     reponse = reponse.toUpperCase();
                     if (reponse.charAt(0) == 'Y') state.startState();
 

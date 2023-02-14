@@ -13,8 +13,7 @@ public class GomokuBoard extends BoardGame {
 
     @Override
     public boolean isOver(View vue) { // verif gagnant
-        //ConsoleView vue = new ConsoleView();
-        int nbrevide=0;
+         int nbrevide=0;
         int nbrealign=0;
         final  int WINnbreALIGN = 5;
         char lastowner = '?';

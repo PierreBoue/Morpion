@@ -22,11 +22,11 @@ public class InteractionUtilisateur
     /**
      * Constructor init the scanner
      */
-    public InteractionUtilisateur()
+    public InteractionUtilisateur( View vue)
     {
         scanner = new Scanner(System.in);
         nextPlayerSymbol = '\0';
-        vue = new ConsoleView();
+        this.vue = vue;
     }
     public GameChoice askForGame()
     {
@@ -55,7 +55,6 @@ public class InteractionUtilisateur
      */
     public int askForInt( String message)
     {
-        //ConsoleView vue = new ConsoleView();
         int reponse = Integer.MAX_VALUE;
         vue.printMessage(message);
         while ( reponse == Integer.MAX_VALUE)
@@ -79,14 +78,18 @@ public class InteractionUtilisateur
      */
     public String askForString( String message )
     {
-        //ConsoleView vue = new ConsoleView();
         String reponse = null;
+        //scanner.nextLine();
         vue.printMessage(message);
 
         while ( reponse == null)
         {
             try {
-                reponse = scanner.nextLine();
+               for (int i=0; i <2; i++)
+               {
+                   reponse = scanner.nextLine();
+                   if (( reponse != null) && ( ! reponse.isBlank())) break;
+               }
 
             } catch (Exception e) {
                 vue.printError("You didn't type a string");
@@ -104,7 +107,6 @@ public class InteractionUtilisateur
      */
     public Player askForPlayer(int playerindex )
     {
-        ConsoleView vue = new ConsoleView();
         Player retour=null;
         //vue.printMessage("");
         int choice = -1;

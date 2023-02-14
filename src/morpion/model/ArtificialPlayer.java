@@ -2,6 +2,7 @@ package morpion.model;
 
 import morpion.view.ConsoleView;
 import morpion.view.InteractionUtilisateur;
+import morpion.view.View;
 import org.jetbrains.annotations.*;
 
 import java.util.ArrayList;
@@ -12,11 +13,10 @@ public class ArtificialPlayer extends Player {
         super(symb);
     }
     @Override
-    public int[] play(BoardGame board, int dimension, InteractionUtilisateur interaction ) //jeux automatique
+    public int[] play(BoardGame board, int dimension, View vue, InteractionUtilisateur interaction ) //jeux automatique
     {
         int[] coordonnees = {-1,-1};
         Cell[][] plateau = board.plateau; ;
-        ConsoleView vue = new ConsoleView();
         ArrayList<Cell> emptyCells= new ArrayList<Cell>();
         ArrayList<Cell> thisCells= new ArrayList<Cell>();
         for (int ligne=0; ligne < board.size; ligne++)
