@@ -24,7 +24,7 @@ public class GameFactory {
     {
        int choix = 0;
        Game game = null;
-       InteractionUtilisateur interaction = new InteractionUtilisateur();
+
        while( ( choix < 1) || ( choix > 3 ))
        {
            String msg = "What game would you like to play?\n"
@@ -61,7 +61,6 @@ public class GameFactory {
         Game g = backup.readGame();
        if ( g == null)
        {
-           //ConsoleView view = new ConsoleView();
            vue.printError("Impossible to get the saved game, a new game will be started instead");
            g = getGame(GameChoice.TICTACTOE, interaction, vue);
        }

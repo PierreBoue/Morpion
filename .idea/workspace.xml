@@ -4,50 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0af2408e-57f8-4f57-9679-46e3079f5579" name="Changes" comment="Some improvement in MVC but not yet fully functional">
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/realityforge_jetbrains_annotations.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="0af2408e-57f8-4f57-9679-46e3079f5579" name="Changes" comment="Finally refactored to MVC">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Morpion.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Morpion.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/index-files/index-13.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/index-files/index-13.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/index-files/index-15.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/index-files/index-15.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/index-files/index-7.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/index-files/index-7.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/morpion/model/GameSerialization.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/morpion/model/GameSerialization.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/morpionbu" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Morpion/morpion/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Morpion/morpion/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Morpion/morpion/controller/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Morpion/morpion/controller/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Morpion/morpion/controller/GameChoice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Morpion/morpion/controller/GameChoice.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Morpion/morpion/controller/GameController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Morpion/morpion/controller/GameController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Morpion/morpion/controller/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Morpion/morpion/controller/GameController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Morpion/morpion/controller/GameFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Morpion/morpion/controller/GameFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Morpion/morpion/controller/GameState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Morpion/morpion/controller/GameState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Morpion/morpion/controller/Gomoku.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Morpion/morpion/controller/Gomoku.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Morpion/morpion/controller/Puissance4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Morpion/morpion/controller/Puissance4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Morpion/morpion/controller/TicTacToe.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Morpion/morpion/controller/TicTacToe.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Morpion/morpion/model/ArtificialPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Morpion/morpion/model/ArtificialPlayer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Morpion/morpion/model/BoardGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Morpion/morpion/model/BoardGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Morpion/morpion/model/Cell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Morpion/morpion/model/Cell.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Morpion/morpion/model/GameSerialization.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Morpion/morpion/model/GomokuBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Morpion/morpion/model/GomokuBoard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Morpion/morpion/model/HumanPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Morpion/morpion/model/HumanPlayer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Morpion/morpion/model/Persistence.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Morpion/morpion/model/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Morpion/morpion/model/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Morpion/morpion/model/Puissance4Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Morpion/morpion/model/Puissance4Board.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Morpion/morpion/model/TicTacToeBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Morpion/morpion/model/TicTacToeBoard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Morpion/morpion/view/ConsoleView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Morpion/morpion/view/ConsoleView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Morpion/morpion/view/InteractionUtilisateur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Morpion/morpion/view/InteractionUtilisateur.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Morpion/morpion/view/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Morpion/morpion/view/View.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/morpionbu" beforeDir="false" afterPath="$PROJECT_DIR$/morpionbu" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/morpion/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/morpion/controller/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/controller/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/morpion/controller/GameChoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/controller/GameChoice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/morpion/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/controller/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/morpion/controller/GameFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/controller/GameFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/morpion/model/GameSerialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/controller/GameSerialization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/morpion/model/ArtificialPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/model/ArtificialPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/morpion/model/GomokuBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/model/GomokuBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/morpion/model/Persistence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/controller/Persistence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/morpion/model/Puissance4Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/model/Puissance4Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/morpion/model/TicTacToeBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/model/TicTacToeBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/morpion/model/HumanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/model/HumanPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/morpion/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/model/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/morpion/view/InteractionUtilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/view/InteractionUtilisateur.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,10 +67,10 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -169,6 +137,28 @@
       <workItem from="1673251025293" duration="21246000" />
       <workItem from="1674117479965" duration="1506000" />
     </task>
+    <task id="LOCAL-00001" summary="Some improvement in MVC but not yet fully functional">
+      <created>1676318759030</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1676318759031</updated>
+    </task>
+    <task id="LOCAL-00002" summary="merged">
+      <created>1676318821705</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1676318821705</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Finally refactored to MVC">
+      <created>1676321396483</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1676321396483</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,22 +166,23 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Some improvement in MVC but not yet fully functional" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some improvement in MVC but not yet fully functional" />
+    <MESSAGE value="merged" />
+    <MESSAGE value="Finally refactored to MVC" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finally refactored to MVC" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/morpion/controller/Game.java</url>
-          <line>41</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/morpion/controller/Game.java</url>
-          <line>142</line>
-          <option name="timeStamp" value="7" />
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/morpion/controller/GameChoice.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
