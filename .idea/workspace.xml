@@ -4,17 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0af2408e-57f8-4f57-9679-46e3079f5579" name="Changes" comment="Finally refactored to MVC">
+    <list default="true" id="0af2408e-57f8-4f57-9679-46e3079f5579" name="Changes" comment="Made sure no class of the view are created elsewhere than main">
+      <change afterPath="$PROJECT_DIR$/src/morpion/model/PlayerDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/morpionbu" beforeDir="false" afterPath="$PROJECT_DIR$/morpionbu" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/morpion/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Morpion/morpion/controller/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Morpion/morpion/controller/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Morpion/morpion/view/InteractionUtilisateur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Morpion/morpion/view/InteractionUtilisateur.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/morpion/controller/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/controller/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/morpion/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/morpion/controller/GameFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/controller/GameFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/morpion/model/ArtificialPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/model/ArtificialPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/morpion/model/GomokuBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/model/GomokuBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/morpion/model/HumanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/model/HumanPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/morpion/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/model/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/morpion/view/InteractionUtilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/morpion/view/InteractionUtilisateur.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,6 +24,7 @@
         <option value="Interface" />
         <option value="Class" />
         <option value="Enum" />
+        <option value="Record" />
       </list>
     </option>
   </component>
@@ -158,7 +155,21 @@
       <option name="project" value="LOCAL" />
       <updated>1676321396483</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Made sure no class of the view are created elsewhere than main">
+      <created>1676407456889</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1676407456889</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Made sure no class of the view are created elsewhere than main">
+      <created>1676407526418</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1676407526418</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,18 +179,8 @@
     <MESSAGE value="Some improvement in MVC but not yet fully functional" />
     <MESSAGE value="merged" />
     <MESSAGE value="Finally refactored to MVC" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finally refactored to MVC" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/src/morpion/controller/GameChoice.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Made sure no class of the view are created elsewhere than main" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made sure no class of the view are created elsewhere than main" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -83,11 +83,12 @@ public class GameController {
                 }
                 case PLAYING -> {
                     String reponse ="";
-                    int y=0;
+                   // int y=0;
                     while ( reponse.isBlank())
                     {
                         reponse = interaction.askForString("Would you like to play a new game? (Y/N)");
-                        y++;
+
+                        //y++;
                     }
                     state.endState();
                     playedAlready = true;

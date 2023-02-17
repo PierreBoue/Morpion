@@ -4,6 +4,7 @@ import morpion.controller.GameChoice;
 import morpion.model.ArtificialPlayer;
 import morpion.model.HumanPlayer;
 import morpion.model.Player;
+import morpion.model.PlayerDTO;
 
 import java.util.Scanner;
 
@@ -105,13 +106,17 @@ public class InteractionUtilisateur
      * @param playerindex player number to use before the player has a symbol or name
      * @return Player instantiated as ordered by the user
      */
-    public Player askForPlayer(int playerindex )
+    public void resetPlayerSymbol()
     {
-        Player retour=null;
+        nextPlayerSymbol = '\0';
+    }
+    public PlayerDTO askForPlayer(int playerindex )
+    {
+        //Player retour=null;
         //vue.printMessage("");
         int choice = -1;
         char symbol;
-        if ( nextPlayerSymbol == '\0')
+        if ( nextPlayerSymbol == '\0' )
         {
             while (choice < 0) {
                 choice = askForInt("What symbol do you wish to use for player " + playerindex + "\n1 - X\n2 - O");
@@ -133,7 +138,8 @@ public class InteractionUtilisateur
                 choice = -1;
             }
         }
-        retour = ( choice == 1 )?new HumanPlayer(symbol):new ArtificialPlayer(symbol);
+        PlayerDTO retour = new PlayerDTO(( choice == 1 ), playerindex, symbol );
+
         return retour;
     }
 

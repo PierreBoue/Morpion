@@ -1,8 +1,6 @@
 package morpion.controller;
 
-import morpion.model.BoardGame;
-import morpion.model.Cell;
-import morpion.model.Player;
+import morpion.model.*;
 import morpion.view.ConsoleView;
 import morpion.view.InteractionUtilisateur;
 import morpion.view.View;
@@ -56,10 +54,15 @@ public abstract class Game implements Serializable {
             System.err.println("view is null");
             return;
         }
+        this.interaction.resetPlayerSymbol();
         for (int i=0; i<2; i++)
         {
-            players[i]= this.interaction.askForPlayer( i + 1 );
+            PlayerDTO playerInfo = this.interaction.askForPlayer( i + 1 );
+            //System.out.println( i + " - " +playerInfo.symbol());
+            Player p = ( playerInfo.isHuman())?new HumanPlayer(playerInfo.symbol()):new ArtificialPlayer(playerInfo.symbol());
+            players[i]= p;
         }
+
     }
 
     /**
